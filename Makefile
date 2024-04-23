@@ -3,12 +3,14 @@ NAME = phylosopher
 NAME_BONUS = phylosopher_bonus
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+FLAGS = #-fsanitize=thread #-Wall -Wextra -Werror #-g -fsanitize=address
 RM = rm -f
 
-SRCS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c ./main.c
+SRCS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
+		./main.c ./dbg/dbg_structures.c
 
-SRCS_BONUS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c ./main.c
+SRCS_BONUS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
+		./main.c ./dbg/dbg_structures.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -11,6 +11,5 @@ t_param	*parsing(int argc, char **argv)
 	data->time_to_eat = 100*1000;
 	data->time_to_die = 100*1000;
 	data->time_to_sleep = 100*1000;
-	data->must_die = 1;
 	return (data);
 }
