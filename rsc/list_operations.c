@@ -12,11 +12,12 @@ void	init_forks(t_fork **forks, int n)
 		forks[i] = (t_fork *)malloc(sizeof(t_fork));
 		forks[i]->fork = i + 1;
 		forks[i]->last_user = 0;
+		pthread_mutex_init(&forks[i]->fork_mutex, NULL);
 		i++;
 	}
 }
 
-t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
+t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *data)
 {
 	int	i;
 
@@ -27,6 +28,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 		plist[i] = (t_phlst *)malloc(sizeof(t_phlst));
 		plist[i] -> index = i + 1;
 		plist[i]->must_die = 0;
+		plist[i]->turns = 0;
 		if (i != n - 1)
 		{
 			plist[i] -> left_fork = forks[i];
@@ -38,6 +40,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 			plist[i] -> right_fork = forks[0];
 		}
 		i++;
+		//plist[i]->param = data;
 	}
 	plist[i] = NULL;
 	return (*plist);

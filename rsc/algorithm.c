@@ -2,99 +2,123 @@
 
 void	*print_action(int n, int action)
 {
-	printf("Phylosopher #%i is", n);
+	printf("Phylosopher #%i ", n);
 	if (action == 1)
-		write(1, "eating\n", 8);
+		printf("is eating\n");
 	if (action == 2)
-		write(1, "sleeping\n", 10);
+		printf("is sleeping\n");
 	if (action == 3)
-		write(1, "died\n", 6);
+		printf("is dead\n");
 	if (action == 4)
-		write(1, "has taken a left fork\n", 16);
+		printf("took left fork\n");
 	if (action == 5)
-		write(1, "has taken a right fork\n", 17);
+		printf("took right fork\n");
 	if (action == 6)
-		write(1, "is sratving\n", 13);
+		printf("is sratving\n");
 	if (action == 7)
-		write(1, "thinking\n", 10);
+		printf("is thinking\n");
+	if (action == 9)
+		printf("done eating\n");
 	return (NULL);
 }
 
-// void	*philo(t_param *data)
-// {
-// 	struct timeval	time;
-
-// 	while (1)
-// 	{
-// 		if (data->plist->index %2 == 0)
-// 			usleep(2500);
-// 		if (data->must_die)
-// 			return (NULL);
-// 		lock(min_fork(data));
-// 		lock(data->mutex_printf);
-// 		print_action(data->n, 4); //took_left_fork
-// 		unlock(data->mutex_printf);
-// 		if (data->must_die)
-// 			return (NULL);
-// 		lock(max_fork(data));
-// 		lock(data->mutex_printf);
-// 		print_action(data->n, 5); //took_right_fork
-// 		unlock(data->mutex_printf);
-// 		if (data->must_die)
-// 			return (NULL);
-// 		lock(data->mutex_printf);
-// 		print_action(data->n, 1); //eating
-// 		data->plist->lst_eating_time.tv_usec = gettimeofaday(&time, NULL) - data->prog_start * 1000;
-// 		unlock(data->mutex_printf);
-// 		usleep(data->time_to_eat);
-// 		unlock(min_fork);
-// 		unlock_(max_fork);
-// 		if (data->must_die)
-// 			return (NULL);
-// 		lock(data->mutex_printf);
-// 		print_action(data->n, 2); //sleeping
-// 		unlock(data->mutex_printf);
-// 		usleep(data->time_to_sleep);
-// 	}
-// }
-
-void	*philo_test(void *plist)
+pthread_mutex_t	*min_fork(t_phlst *one_philo)
 {
-	int	i;
-
-	i = 0;
-	printf("philo_test\n");
-	plist = (struct s_list_phylo *)(plist);
-	pthread_mutex_lock(((struct s_list_phylo *)plist)->left_fork->fork_mutex);
-	printf("philo #%i took left_fork\n", ((struct s_list_phylo *)plist)->index);
-	pthread_mutex_lock(((struct s_list_phylo *)plist)->right_fork->fork_mutex);
-	printf("philo #%i took right_fork\n", ((struct s_list_phylo *)plist)->index);
-	printf("philo #%i is eating\n", ((struct s_list_phylo *)plist)->index);
-	printf("philo #%i is sleeping\n\n",((struct s_list_phylo *)plist)->index);
-	pthread_mutex_lock(((struct s_list_phylo *)plist)->left_fork->fork_mutex);
-	pthread_mutex_lock(((struct s_list_phylo *)plist)->right_fork->fork_mutex);
+	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
+		return (&one_philo->left_fork->fork_mutex);
+	else
+		return (&one_philo->right_fork->fork_mutex);
 }
 
-// int	is_dead(t_param *data, t_phlst *philo)
-// {
-// 	if ((gettimeofday(NULL, NULL) * 100 - (philo->lst_eating_time.tv_usec)) >= data->time_to_die)
-// 	{
-// 		print_action(philo->index, 6);
-// 		return (1);
-// 	}
-// 	return (0);
-// }
+pthread_mutex_t	*max_fork(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
+		return (&one_philo->left_fork->fork_mutex);
+	else
+		return (&one_philo->right_fork->fork_mutex);
+}
 
-void	join_all_threads(t_phlst *plist, int n)
+int	someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex)
+{
+	pthread_mutex_lock(&sd_mutex);
+	if (shared_data->prog_must_die)
+	{
+		pthread_mutex_unlock(&sd_mutex);
+		return (1);
+	}
+	pthread_mutex_unlock(&sd_mutex);
+	return (0);
+}
+
+void	*philo(void *one_philo)
+{
+	int i;
+	struct s_list_phylo *plist;
+	t_param	*shared_data;
+	struct timeval	cur_time;
+	pthread_mutex_t	sd_mutex;
+
+	i = 0;
+	plist = (struct s_list_phylo *)(one_philo);
+	shared_data = *(plist->param);
+	sd_mutex = shared_data->param_mutex;
+	while (1)
+	{
+		if (plist->index%2 == 0)
+			my_usleep(2500);
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);
+		pthread_mutex_lock(min_fork(plist));
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action((plist)->index, 4); //took_left_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);	
+		pthread_mutex_lock(max_fork((plist)));
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 5); //took_right_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);
+		pthread_mutex_lock(&shared_data->mutex_printf);
+
+		print_action(plist->index, 1); //eating
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+		my_usleep(shared_data->time_to_eat);
+		gettimeofday(&cur_time, NULL);
+		plist->lst_eating_time = cur_time;
+		plist->turns ++;
+		
+		int	has_eaten;
+		has_eaten = (cur_time.tv_sec - plist->lst_eating_time.tv_sec)*100000 + (cur_time.tv_usec - plist->lst_eating_time.tv_usec);
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			printf("has eaten period:%i, turns_time=%i\n", has_eaten, plist->turns); //debug
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+
+		pthread_mutex_unlock(min_fork(plist));
+		pthread_mutex_unlock(max_fork(plist));
+
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 2); //sleeping
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+		my_usleep(shared_data->time_to_sleep);
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);
+		i++;
+	}
+}
+
+void	join_all_threads(t_param *data, int n)
 {
 	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		pthread_join(plist->thread, NULL);
+		pthread_join(data->plist[i]->thread, NULL);
 		i++;
-		plist = plist->next;
 	}
 }
 
@@ -102,42 +126,43 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 {
 	int		n;
 	int		i;
+	int		turns;
 	t_phlst	*plist[200];
 	t_phlst	*head;
+	struct timeval	start;
 
 	n = 0;
 	i = 0;
-	init_plist_and_forks(plist, data->n, forks);
+	printf("hi\n");
+	init_plist_and_forks(plist, data->n, forks, data);
 	data->plist = plist;
+	printf("hello\n");
 	print_data_list(data, plist); //dbg
+	pthread_mutex_init(&data->mutex_printf, NULL);
+	pthread_mutex_init(&data->param_mutex, NULL);
+	data->prog_must_die = 0;
+	gettimeofday(&start, NULL);
+	data->prog_start = start;
 	while (n < data->n)
 	{
-		pthread_create(data->plist[i]->thread, NULL, philo_test, (void *)(data->plist[i]));
-		//pthread_mutex_init(&plist->mutex_for_fork, NULL);
+		data->plist[i]->param = &data;
+		data->plist[i]->lst_eating_time = data->prog_start = start;
+		pthread_create(&data->plist[i]->thread, NULL, philo, (void *)(data->plist[i]));
 		n++;
 		i++;
 	}
-	// join_all_threads(plist, data->n);
-
-	// data-> = (pthread_mutex_t *)malloc((d_dinner->num_ph) * sizeof(pthread_mutex_t));
-	// pthread_mutex_init(&data->mutex_printf, NULL);
-	// while (1)
-	// {
-	// 	n = data->n;
-	// 	while (n)
-	// 	{
-	// 		if (is_dead(data, data->plist))
-	// 		{
-	// 			data->must_die = 1;
-	// 			join_all_threads(plist);
-	// 			destroy_all_mutex(plist);
-	// 			return(exit_phylo(data, 0));
-	// 		}
-	// 		data->plist = plist->next;
-	// 		n++;
-	// 	}
-	// 	for (philo in philosophers)
-	// }
+	if (data->turns_to_eat == 0)
+	{
+		if (monitore_endlessly(data))
+			return (1);
+	}
+	else
+	{
+		if (monitore_while_turns(data))
+			return (1);
+	}
+	join_all_threads(data, data->n);
+	//destroy_all_mutex(data, forks);
 	return (0);
 }
 

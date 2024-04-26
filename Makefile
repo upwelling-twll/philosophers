@@ -3,11 +3,11 @@ NAME = phylosopher
 NAME_BONUS = phylosopher_bonus
 
 CC = cc
-FLAGS = #-fsanitize=thread #-Wall -Wextra -Werror #-g -fsanitize=address
+FLAGS = #-g -fsanitize=address #-fsanitize=thread #-Wall -Wextra -Werror -g -fsanitize=address
 RM = rm -f
 
 SRCS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
-		./main.c ./dbg/dbg_structures.c
+		./rsc/usleep.c ./rsc/monitoring.c ./main.c ./dbg/dbg_structures.c
 
 SRCS_BONUS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
 		./main.c ./dbg/dbg_structures.c
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.c=.o)
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-LIBFT:= libft/libft.a
+# LIBFT:= libft/libft.a
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -25,23 +25,18 @@ all: $(NAME)
  
 bonus:  $(NAME) $(NAME_BONUS)
 
-$(NAME): $(LIBFT) $(OBJS)
-	@ $(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+$(NAME): $(OBJS) #$(LIBFT)
+	@ $(CC) $(FLAGS) -o $(NAME) $(OBJS) 
 
 $(NAME_BONUS): $(OBJS_BONUS)
-	@ $(CC) $(FLAGS) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIBFT)
-
-$(LIBFT):
-	@ make -C libft/ >/dev/null
+	@ $(CC) $(FLAGS) -o $(NAME_BONUS) $(OBJS_BONUS)
 
 clean:
 	@ $(RM) $(OBJS) $(OBJS_BONUS)
-	@ make -C libft/ clean >/dev/null
 
 fclean: clean
 	@ $(RM) $(NAME) $(NAME_BONUS)
-	@ make -C libft/
 
 re: fclean all
 
-.PHONY: all libft clean fclean re bonus
+.PHONY: all clean fclean re bonus
