@@ -104,8 +104,12 @@ void	*philo(void *one_philo)
 			print_action(plist->index, 2); //sleeping
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 		my_usleep(shared_data->time_to_sleep);
-		if (someone_is_dead(shared_data, sd_mutex))
-			return (NULL);
+		// if (someone_is_dead(shared_data, sd_mutex))
+		// 	return (NULL);
+		pthread_mutex_lock(&shared_data->mutex_printf);
+		print_action(plist->index, 7); //thinking
+		pthread_mutex_unlock(&shared_data->mutex_printf);
+		my_usleep(shared_data->time_to_think);
 		i++;
 	}
 }

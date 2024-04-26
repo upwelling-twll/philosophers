@@ -31,9 +31,10 @@ typedef struct s_list_phylo
 typedef struct s_param
 {
 	int					n;
-	int					time_to_eat;
-	int					time_to_die;
-	int					time_to_sleep;
+	size_t				time_to_eat;
+	size_t				time_to_die;
+	size_t				time_to_sleep;
+	size_t				time_to_think;
 	int					turns_to_eat;
 	struct timeval		prog_start;
 	t_phlst				**plist;
