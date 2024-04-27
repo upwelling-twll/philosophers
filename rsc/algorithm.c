@@ -14,12 +14,34 @@ void	*print_action(int n, int action)
 	if (action == 5)
 		printf("took right fork\n");
 	if (action == 6)
-		printf("is sratving\n");
+		printf("is starving\n");
 	if (action == 7)
 		printf("is thinking\n");
 	if (action == 9)
 		printf("done eating\n");
+	if (action == 10)
+		printf("is no more using a min fork\n");
+	if (action == 11)
+		printf("is no more using max fork\n");
+	if (action == 12)
+		printf("done thinking\n");
 	return (NULL);
+}
+
+int	min_fork_last_user(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
+		return (one_philo->left_fork->last_user);
+	else
+		return (one_philo->right_fork->last_user);
+}
+
+int	max_fork_last_user(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
+		return (one_philo->left_fork->last_user);
+	else
+		return (one_philo->right_fork->last_user);
 }
 
 pthread_mutex_t	*min_fork(t_phlst *one_philo)
@@ -64,8 +86,24 @@ void	*philo(void *one_philo)
 	sd_mutex = shared_data->param_mutex;
 	while (1)
 	{
+		if (plist->turns != 0)
+		{
+			struct timeval thinking_time;
+			gettimeofday(&thinking_time, NULL);
+			plist->thinking_time = thinking_time;
+			pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 7); //thinking
+			printf("thnk_start_time: sec:%zu usec:%zu\n", thinking_time.tv_sec, thinking_time.tv_usec);
+			pthread_mutex_unlock(&shared_data->mutex_printf);
+			usleep(100);
+			pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 12); //thinking
+			pthread_mutex_unlock(&shared_data->mutex_printf);
+		}
 		if (plist->index%2 == 0)
-			my_usleep(2500);
+			usleep(2500);
+		while (min_fork_last_user(plist) == plist->index || max_fork_last_user(plist) == plist->index)
+			usleep(50);
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
 		pthread_mutex_lock(min_fork(plist));
@@ -81,35 +119,37 @@ void	*philo(void *one_philo)
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
 		pthread_mutex_lock(&shared_data->mutex_printf);
-
 		print_action(plist->index, 1); //eating
 		pthread_mutex_unlock(&shared_data->mutex_printf);
-		my_usleep(shared_data->time_to_eat);
-		gettimeofday(&cur_time, NULL);
+			gettimeofday(&cur_time, NULL);
 		plist->lst_eating_time = cur_time;
 		plist->turns ++;
+		usleep(shared_data->time_to_eat);
 		
 		int	has_eaten;
 		has_eaten = (cur_time.tv_sec - plist->lst_eating_time.tv_sec)*100000 + (cur_time.tv_usec - plist->lst_eating_time.tv_usec);
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			printf("has eaten period:%i, turns_time=%i\n", has_eaten, plist->turns); //debug
 		pthread_mutex_unlock(&shared_data->mutex_printf);
-
+		plist->left_fork->last_user = plist->index;
+		plist->right_fork->last_user = plist->index;
 		pthread_mutex_unlock(min_fork(plist));
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 10); //not_usin_min_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
 		pthread_mutex_unlock(max_fork(plist));
+		pthread_mutex_lock(&shared_data->mutex_printf);
+			print_action(plist->index, 11); //not_usin_max_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
 
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action(plist->index, 2); //sleeping
 		pthread_mutex_unlock(&shared_data->mutex_printf);
-		my_usleep(shared_data->time_to_sleep);
+		usleep(shared_data->time_to_sleep);
 		// if (someone_is_dead(shared_data, sd_mutex))
 		// 	return (NULL);
-		pthread_mutex_lock(&shared_data->mutex_printf);
-		print_action(plist->index, 7); //thinking
-		pthread_mutex_unlock(&shared_data->mutex_printf);
-		my_usleep(shared_data->time_to_think);
 		i++;
 	}
 }
@@ -137,10 +177,8 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 
 	n = 0;
 	i = 0;
-	printf("hi\n");
 	init_plist_and_forks(plist, data->n, forks, data);
 	data->plist = plist;
-	printf("hello\n");
 	print_data_list(data, plist); //dbg
 	pthread_mutex_init(&data->mutex_printf, NULL);
 	pthread_mutex_init(&data->param_mutex, NULL);

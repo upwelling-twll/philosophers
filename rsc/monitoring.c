@@ -3,12 +3,19 @@
 int	is_dead(t_param *data, t_phlst *philo)
 {
 	size_t	time_after_eating;
+	size_t	time_after_thinking;
 	struct timeval	cur;
 
 	if (philo->turns == 0)
 		return (0);
 	gettimeofday(&cur, NULL);
-	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) + (cur.tv_usec - philo->lst_eating_time.tv_usec);
+	// 	pthread_mutex_lock(&(data->mutex_printf));
+	// 	printf("philo number: #%i\n", philo->index);
+	// printf("current_mm_time: sec:%zu usec:%zu\n", cur.tv_sec - data->prog_start.tv_sec, cur.tv_usec - data->prog_start.tv_usec);
+	// printf("lst_eating_time: sec:%zu usec:%zu\n", philo->lst_eating_time.tv_sec - data->prog_start.tv_sec, philo->lst_eating_time.tv_usec - data->prog_start.tv_usec);
+	// 	pthread_mutex_unlock(&(data->mutex_printf));	
+	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) * 1000000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
+	// time_after_thinking = (cur.tv_sec - philo->thinking_time.tv_sec) * 1000000 + (cur.tv_usec - philo->thinking_time.tv_usec);
 	pthread_mutex_lock(&(data->mutex_printf));	
 	//printf("lst_eating_time | time_to_die\n        %li       |     %i     \n", time_after_eating, data->time_to_die);
 	pthread_mutex_unlock(&(data->mutex_printf));
@@ -16,9 +23,12 @@ int	is_dead(t_param *data, t_phlst *philo)
 	{
 		pthread_mutex_lock(&(data->mutex_printf));	
 		print_action(philo->index, 6);
-		printf("current_mm_time: sec:%li usec:%li\n", cur.tv_sec, cur.tv_usec);
-		printf("lst_eating_time: sec:%li usec:%li\n", philo->lst_eating_time.tv_sec, philo->lst_eating_time.tv_usec);
-		printf("time_after_eating: %zu \n", time_after_eating);
+		// printf("prog_start_time: sec:%zu usec:%zu\n",data->prog_start.tv_sec, data->prog_start.tv_usec);
+		// printf("thnk_start_time: sec:%zu usec:%zu\n", philo->thinking_time.tv_sec, philo->thinking_time.tv_usec);
+		// printf("current_rw_time: sec:%zu usec:%zu\n", cur.tv_sec, cur.tv_usec);
+		// printf("current_mm_time: sec:%zu usec:%zu\n", cur.tv_sec - data->prog_start.tv_sec, cur.tv_usec - data->prog_start.tv_usec);
+		// printf("lst_eating_time: sec:%zu usec:%zu\n", philo->lst_eating_time.tv_sec - data->prog_start.tv_sec, philo->lst_eating_time.tv_usec - data->prog_start.tv_usec);
+		// printf("time_after_eating: %zu \n", time_after_eating);
 		pthread_mutex_unlock(&(data->mutex_printf));
 		return (1);
 	}
@@ -32,7 +42,7 @@ int	monitore_while_turns(t_param *data)
 
 	i = 0;
 	t = 0;
-	printf("monitoring_turns\n");
+	// printf("monitoring_turns\n");
 	while (t < data->turns_to_eat)
 	{
 		while (i < data->n)
@@ -59,7 +69,7 @@ int	monitore_endlessly(t_param *data)
 	int	i;
 
 	i = 0;
-	printf("monitoring_endlessly\n");
+	// printf("monitoring_endlessly\n");
 	while (1)
 	{
 		i = 0;

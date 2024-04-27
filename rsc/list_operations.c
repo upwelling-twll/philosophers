@@ -1,7 +1,5 @@
 #include "../phylosopher.h"
 
-
-
 void	init_forks(t_fork **forks, int n)
 {
 	int	i;

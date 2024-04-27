@@ -23,6 +23,7 @@ typedef struct s_list_phylo
 	t_fork				*right_fork;
 	int					turns;
 	pthread_t			thread;
+	struct 	timeval thinking_time; //dbg
 
 	int					must_die;
 	struct s_param		**param;
