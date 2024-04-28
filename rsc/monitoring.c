@@ -22,7 +22,7 @@ int	is_dead(t_param *data, t_phlst *philo)
 	if (time_after_eating > data->time_to_die)
 	{
 		pthread_mutex_lock(&(data->mutex_printf));	
-		print_action(philo->index, 6);
+		print_action(philo->index, 6,  *(philo->param));
 		// printf("prog_start_time: sec:%zu usec:%zu\n",data->prog_start.tv_sec, data->prog_start.tv_usec);
 		// printf("thnk_start_time: sec:%zu usec:%zu\n", philo->thinking_time.tv_sec, philo->thinking_time.tv_usec);
 		// printf("current_rw_time: sec:%zu usec:%zu\n", cur.tv_sec, cur.tv_usec);

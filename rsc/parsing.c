@@ -26,18 +26,19 @@ t_param	*parsing(int argc, char **argv)
 	if (argc < 5 || !argv)
 		return (NULL);
 	data = malloc(sizeof(t_param));
-	// data->n = 199;
-	// data->time_to_eat = 200 * 1000; //one hundred thousand microseconds
-	// data->time_to_die = 610 * 1000;
-	// data->time_to_sleep = 200 * 1000;
-	// data->time_to_think = 100 * 1000;
-	// data->turns_to_eat = 0;
 	data->n = atoi(argv[1]);
 	data->time_to_eat = atoi(argv[3]) * 1000; //one hundred thousand microseconds
 	data->time_to_die = atoi(argv[2]) * 1000;
 	data->time_to_sleep = atoi(argv[4]) * 1000;
 	if (argv[5])
+	{
+		if (atoi(argv[5]) == 0)
+		{
+			free(data);
+			return (NULL);
+		}
 		data->turns_to_eat = atoi(argv[5]);
+	}
 	else
 		data->turns_to_eat = 0;
 	if (incorrect_data(data))

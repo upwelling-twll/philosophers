@@ -22,5 +22,7 @@ int	exit_phylo(t_param *data, int flag)
 		write(1, "Invalid parameters\n", 20);
 	if (flag == 1)
 		write(1, "Program exit\n", 14);
+	if (data ->prog_must_die == 1)
+		write(1, "Someone if dead\n", 14);
 	return (1);
 }

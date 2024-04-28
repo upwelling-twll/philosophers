@@ -1,0 +1,1062 @@
+Philo index 1; last_eating_time 0; Left fork 1; Right fork 2; must die 0.
+Philo index 2; last_eating_time 0; Left fork 2; Right fork 3; must die 0.
+Philo index 3; last_eating_time 0; Left fork 3; Right fork 4; must die 0.
+Philo index 4; last_eating_time 0; Left fork 4; Right fork 5; must die 0.
+Philo index 5; last_eating_time 0; Left fork 5; Right fork 6; must die 0.
+Philo index 6; last_eating_time 0; Left fork 6; Right fork 7; must die 0.
+Philo index 7; last_eating_time 0; Left fork 7; Right fork 8; must die 0.
+Philo index 8; last_eating_time 0; Left fork 8; Right fork 9; must die 0.
+Philo index 9; last_eating_time 0; Left fork 9; Right fork 10; must die 0.
+Philo index 10; last_eating_time 0; Left fork 10; Right fork 11; must die 0.
+Philo index 11; last_eating_time 0; Left fork 11; Right fork 12; must die 0.
+Philo index 12; last_eating_time 0; Left fork 12; Right fork 13; must die 0.
+Philo index 13; last_eating_time 0; Left fork 13; Right fork 14; must die 0.
+Philo index 14; last_eating_time 0; Left fork 14; Right fork 15; must die 0.
+Philo index 15; last_eating_time 0; Left fork 15; Right fork 16; must die 0.
+Philo index 16; last_eating_time 0; Left fork 16; Right fork 17; must die 0.
+Philo index 17; last_eating_time 0; Left fork 17; Right fork 18; must die 0.
+Philo index 18; last_eating_time 0; Left fork 18; Right fork 19; must die 0.
+Philo index 19; last_eating_time 0; Left fork 19; Right fork 20; must die 0.
+Philo index 20; last_eating_time 0; Left fork 20; Right fork 21; must die 0.
+Philo index 21; last_eating_time 0; Left fork 21; Right fork 22; must die 0.
+Philo index 22; last_eating_time 0; Left fork 22; Right fork 23; must die 0.
+Philo index 23; last_eating_time 0; Left fork 23; Right fork 24; must die 0.
+Philo index 24; last_eating_time 0; Left fork 24; Right fork 25; must die 0.
+Philo index 25; last_eating_time 0; Left fork 25; Right fork 26; must die 0.
+Philo index 26; last_eating_time 0; Left fork 26; Right fork 27; must die 0.
+Philo index 27; last_eating_time 0; Left fork 27; Right fork 28; must die 0.
+Philo index 28; last_eating_time 0; Left fork 28; Right fork 29; must die 0.
+Philo index 29; last_eating_time 0; Left fork 29; Right fork 30; must die 0.
+Philo index 30; last_eating_time 0; Left fork 30; Right fork 31; must die 0.
+Philo index 31; last_eating_time 0; Left fork 31; Right fork 32; must die 0.
+Philo index 32; last_eating_time 0; Left fork 32; Right fork 33; must die 0.
+Philo index 33; last_eating_time 0; Left fork 33; Right fork 34; must die 0.
+Philo index 34; last_eating_time 0; Left fork 34; Right fork 35; must die 0.
+Philo index 35; last_eating_time 0; Left fork 35; Right fork 36; must die 0.
+Philo index 36; last_eating_time 0; Left fork 36; Right fork 37; must die 0.
+Philo index 37; last_eating_time 0; Left fork 37; Right fork 38; must die 0.
+Philo index 38; last_eating_time 0; Left fork 38; Right fork 39; must die 0.
+Philo index 39; last_eating_time 0; Left fork 39; Right fork 40; must die 0.
+Philo index 40; last_eating_time 0; Left fork 40; Right fork 41; must die 0.
+Philo index 41; last_eating_time 0; Left fork 41; Right fork 42; must die 0.
+Philo index 42; last_eating_time 0; Left fork 42; Right fork 43; must die 0.
+Philo index 43; last_eating_time 0; Left fork 43; Right fork 44; must die 0.
+Philo index 44; last_eating_time 0; Left fork 44; Right fork 45; must die 0.
+Philo index 45; last_eating_time 0; Left fork 45; Right fork 46; must die 0.
+Philo index 46; last_eating_time 0; Left fork 46; Right fork 47; must die 0.
+Philo index 47; last_eating_time 0; Left fork 47; Right fork 48; must die 0.
+Philo index 48; last_eating_time 0; Left fork 48; Right fork 49; must die 0.
+Philo index 49; last_eating_time 0; Left fork 49; Right fork 50; must die 0.
+Philo index 50; last_eating_time 0; Left fork 50; Right fork 51; must die 0.
+Philo index 51; last_eating_time 0; Left fork 51; Right fork 52; must die 0.
+Philo index 52; last_eating_time 0; Left fork 52; Right fork 53; must die 0.
+Philo index 53; last_eating_time 0; Left fork 53; Right fork 54; must die 0.
+Philo index 54; last_eating_time 0; Left fork 54; Right fork 55; must die 0.
+Philo index 55; last_eating_time 0; Left fork 55; Right fork 56; must die 0.
+Philo index 56; last_eating_time 0; Left fork 56; Right fork 57; must die 0.
+Philo index 57; last_eating_time 0; Left fork 57; Right fork 58; must die 0.
+Philo index 58; last_eating_time 0; Left fork 58; Right fork 59; must die 0.
+Philo index 59; last_eating_time 0; Left fork 59; Right fork 60; must die 0.
+Philo index 60; last_eating_time 0; Left fork 60; Right fork 61; must die 0.
+Philo index 61; last_eating_time 0; Left fork 61; Right fork 62; must die 0.
+Philo index 62; last_eating_time 0; Left fork 62; Right fork 63; must die 0.
+Philo index 63; last_eating_time 0; Left fork 63; Right fork 64; must die 0.
+Philo index 64; last_eating_time 0; Left fork 64; Right fork 65; must die 0.
+Philo index 65; last_eating_time 0; Left fork 65; Right fork 66; must die 0.
+Philo index 66; last_eating_time 0; Left fork 66; Right fork 67; must die 0.
+Philo index 67; last_eating_time 0; Left fork 67; Right fork 68; must die 0.
+Philo index 68; last_eating_time 0; Left fork 68; Right fork 69; must die 0.
+Philo index 69; last_eating_time 0; Left fork 69; Right fork 70; must die 0.
+Philo index 70; last_eating_time 0; Left fork 70; Right fork 71; must die 0.
+Philo index 71; last_eating_time 0; Left fork 71; Right fork 72; must die 0.
+Philo index 72; last_eating_time 0; Left fork 72; Right fork 73; must die 0.
+Philo index 73; last_eating_time 0; Left fork 73; Right fork 74; must die 0.
+Philo index 74; last_eating_time 0; Left fork 74; Right fork 75; must die 0.
+Philo index 75; last_eating_time 0; Left fork 75; Right fork 76; must die 0.
+Philo index 76; last_eating_time 0; Left fork 76; Right fork 77; must die 0.
+Philo index 77; last_eating_time 0; Left fork 77; Right fork 78; must die 0.
+Philo index 78; last_eating_time 0; Left fork 78; Right fork 79; must die 0.
+Philo index 79; last_eating_time 0; Left fork 79; Right fork 80; must die 0.
+Philo index 80; last_eating_time 0; Left fork 80; Right fork 81; must die 0.
+Philo index 81; last_eating_time 0; Left fork 81; Right fork 82; must die 0.
+Philo index 82; last_eating_time 0; Left fork 82; Right fork 83; must die 0.
+Philo index 83; last_eating_time 0; Left fork 83; Right fork 84; must die 0.
+Philo index 84; last_eating_time 0; Left fork 84; Right fork 85; must die 0.
+Philo index 85; last_eating_time 0; Left fork 85; Right fork 86; must die 0.
+Philo index 86; last_eating_time 0; Left fork 86; Right fork 87; must die 0.
+Philo index 87; last_eating_time 0; Left fork 87; Right fork 88; must die 0.
+Philo index 88; last_eating_time 0; Left fork 88; Right fork 89; must die 0.
+Philo index 89; last_eating_time 0; Left fork 89; Right fork 90; must die 0.
+Philo index 90; last_eating_time 0; Left fork 90; Right fork 91; must die 0.
+Philo index 91; last_eating_time 0; Left fork 91; Right fork 92; must die 0.
+Philo index 92; last_eating_time 0; Left fork 92; Right fork 93; must die 0.
+Philo index 93; last_eating_time 0; Left fork 93; Right fork 94; must die 0.
+Philo index 94; last_eating_time 0; Left fork 94; Right fork 95; must die 0.
+Philo index 95; last_eating_time 0; Left fork 95; Right fork 96; must die 0.
+Philo index 96; last_eating_time 0; Left fork 96; Right fork 97; must die 0.
+Philo index 97; last_eating_time 0; Left fork 97; Right fork 98; must die 0.
+Philo index 98; last_eating_time 0; Left fork 98; Right fork 99; must die 0.
+Philo index 99; last_eating_time 0; Left fork 99; Right fork 100; must die 0.
+Philo index 100; last_eating_time 0; Left fork 100; Right fork 101; must die 0.
+Philo index 101; last_eating_time 0; Left fork 101; Right fork 102; must die 0.
+Philo index 102; last_eating_time 0; Left fork 102; Right fork 103; must die 0.
+Philo index 103; last_eating_time 0; Left fork 103; Right fork 104; must die 0.
+Philo index 104; last_eating_time 0; Left fork 104; Right fork 105; must die 0.
+Philo index 105; last_eating_time 0; Left fork 105; Right fork 106; must die 0.
+Philo index 106; last_eating_time 0; Left fork 106; Right fork 107; must die 0.
+Philo index 107; last_eating_time 0; Left fork 107; Right fork 108; must die 0.
+Philo index 108; last_eating_time 0; Left fork 108; Right fork 109; must die 0.
+Philo index 109; last_eating_time 0; Left fork 109; Right fork 110; must die 0.
+Philo index 110; last_eating_time 0; Left fork 110; Right fork 111; must die 0.
+Philo index 111; last_eating_time 0; Left fork 111; Right fork 112; must die 0.
+Philo index 112; last_eating_time 0; Left fork 112; Right fork 113; must die 0.
+Philo index 113; last_eating_time 0; Left fork 113; Right fork 114; must die 0.
+Philo index 114; last_eating_time 0; Left fork 114; Right fork 115; must die 0.
+Philo index 115; last_eating_time 0; Left fork 115; Right fork 116; must die 0.
+Philo index 116; last_eating_time 0; Left fork 116; Right fork 117; must die 0.
+Philo index 117; last_eating_time 0; Left fork 117; Right fork 118; must die 0.
+Philo index 118; last_eating_time 0; Left fork 118; Right fork 119; must die 0.
+Philo index 119; last_eating_time 0; Left fork 119; Right fork 120; must die 0.
+Philo index 120; last_eating_time 0; Left fork 120; Right fork 121; must die 0.
+Philo index 121; last_eating_time 0; Left fork 121; Right fork 122; must die 0.
+Philo index 122; last_eating_time 0; Left fork 122; Right fork 123; must die 0.
+Philo index 123; last_eating_time 0; Left fork 123; Right fork 124; must die 0.
+Philo index 124; last_eating_time 0; Left fork 124; Right fork 125; must die 0.
+Philo index 125; last_eating_time 0; Left fork 125; Right fork 126; must die 0.
+Philo index 126; last_eating_time 0; Left fork 126; Right fork 127; must die 0.
+Philo index 127; last_eating_time 0; Left fork 127; Right fork 128; must die 0.
+Philo index 128; last_eating_time 0; Left fork 128; Right fork 129; must die 0.
+Philo index 129; last_eating_time 0; Left fork 129; Right fork 130; must die 0.
+Philo index 130; last_eating_time 0; Left fork 130; Right fork 131; must die 0.
+Philo index 131; last_eating_time 0; Left fork 131; Right fork 132; must die 0.
+Philo index 132; last_eating_time 0; Left fork 132; Right fork 133; must die 0.
+Philo index 133; last_eating_time 0; Left fork 133; Right fork 134; must die 0.
+Philo index 134; last_eating_time 0; Left fork 134; Right fork 135; must die 0.
+Philo index 135; last_eating_time 0; Left fork 135; Right fork 136; must die 0.
+Philo index 136; last_eating_time 0; Left fork 136; Right fork 137; must die 0.
+Philo index 137; last_eating_time 0; Left fork 137; Right fork 138; must die 0.
+Philo index 138; last_eating_time 0; Left fork 138; Right fork 139; must die 0.
+Philo index 139; last_eating_time 0; Left fork 139; Right fork 140; must die 0.
+Philo index 140; last_eating_time 0; Left fork 140; Right fork 141; must die 0.
+Philo index 141; last_eating_time 0; Left fork 141; Right fork 142; must die 0.
+Philo index 142; last_eating_time 0; Left fork 142; Right fork 143; must die 0.
+Philo index 143; last_eating_time 0; Left fork 143; Right fork 144; must die 0.
+Philo index 144; last_eating_time 0; Left fork 144; Right fork 145; must die 0.
+Philo index 145; last_eating_time 0; Left fork 145; Right fork 146; must die 0.
+Philo index 146; last_eating_time 0; Left fork 146; Right fork 147; must die 0.
+Philo index 147; last_eating_time 0; Left fork 147; Right fork 148; must die 0.
+Philo index 148; last_eating_time 0; Left fork 148; Right fork 149; must die 0.
+Philo index 149; last_eating_time 0; Left fork 149; Right fork 150; must die 0.
+Philo index 150; last_eating_time 0; Left fork 150; Right fork 151; must die 0.
+Philo index 151; last_eating_time 0; Left fork 151; Right fork 152; must die 0.
+Philo index 152; last_eating_time 0; Left fork 152; Right fork 153; must die 0.
+Philo index 153; last_eating_time 0; Left fork 153; Right fork 154; must die 0.
+Philo index 154; last_eating_time 0; Left fork 154; Right fork 155; must die 0.
+Philo index 155; last_eating_time 0; Left fork 155; Right fork 156; must die 0.
+Philo index 156; last_eating_time 0; Left fork 156; Right fork 157; must die 0.
+Philo index 157; last_eating_time 0; Left fork 157; Right fork 158; must die 0.
+Philo index 158; last_eating_time 0; Left fork 158; Right fork 159; must die 0.
+Philo index 159; last_eating_time 0; Left fork 159; Right fork 160; must die 0.
+Philo index 160; last_eating_time 0; Left fork 160; Right fork 161; must die 0.
+Philo index 161; last_eating_time 0; Left fork 161; Right fork 162; must die 0.
+Philo index 162; last_eating_time 0; Left fork 162; Right fork 163; must die 0.
+Philo index 163; last_eating_time 0; Left fork 163; Right fork 164; must die 0.
+Philo index 164; last_eating_time 0; Left fork 164; Right fork 165; must die 0.
+Philo index 165; last_eating_time 0; Left fork 165; Right fork 166; must die 0.
+Philo index 166; last_eating_time 0; Left fork 166; Right fork 167; must die 0.
+Philo index 167; last_eating_time 0; Left fork 167; Right fork 168; must die 0.
+Philo index 168; last_eating_time 0; Left fork 168; Right fork 169; must die 0.
+Philo index 169; last_eating_time 0; Left fork 169; Right fork 170; must die 0.
+Philo index 170; last_eating_time 0; Left fork 170; Right fork 171; must die 0.
+Philo index 171; last_eating_time 0; Left fork 171; Right fork 172; must die 0.
+Philo index 172; last_eating_time 0; Left fork 172; Right fork 173; must die 0.
+Philo index 173; last_eating_time 0; Left fork 173; Right fork 174; must die 0.
+Philo index 174; last_eating_time 0; Left fork 174; Right fork 175; must die 0.
+Philo index 175; last_eating_time 0; Left fork 175; Right fork 176; must die 0.
+Philo index 176; last_eating_time 0; Left fork 176; Right fork 177; must die 0.
+Philo index 177; last_eating_time 0; Left fork 177; Right fork 178; must die 0.
+Philo index 178; last_eating_time 0; Left fork 178; Right fork 179; must die 0.
+Philo index 179; last_eating_time 0; Left fork 179; Right fork 180; must die 0.
+Philo index 180; last_eating_time 0; Left fork 180; Right fork 181; must die 0.
+Philo index 181; last_eating_time 0; Left fork 181; Right fork 182; must die 0.
+Philo index 182; last_eating_time 0; Left fork 182; Right fork 183; must die 0.
+Philo index 183; last_eating_time 0; Left fork 183; Right fork 184; must die 0.
+Philo index 184; last_eating_time 0; Left fork 184; Right fork 185; must die 0.
+Philo index 185; last_eating_time 0; Left fork 185; Right fork 186; must die 0.
+Philo index 186; last_eating_time 0; Left fork 186; Right fork 187; must die 0.
+Philo index 187; last_eating_time 0; Left fork 187; Right fork 188; must die 0.
+Philo index 188; last_eating_time 0; Left fork 188; Right fork 189; must die 0.
+Philo index 189; last_eating_time 0; Left fork 189; Right fork 190; must die 0.
+Philo index 190; last_eating_time 0; Left fork 190; Right fork 191; must die 0.
+Philo index 191; last_eating_time 0; Left fork 191; Right fork 192; must die 0.
+Philo index 192; last_eating_time 0; Left fork 192; Right fork 193; must die 0.
+Philo index 193; last_eating_time 0; Left fork 193; Right fork 194; must die 0.
+Philo index 194; last_eating_time 0; Left fork 194; Right fork 195; must die 0.
+Philo index 195; last_eating_time 0; Left fork 195; Right fork 196; must die 0.
+Philo index 196; last_eating_time 0; Left fork 196; Right fork 197; must die 0.
+Philo index 197; last_eating_time 0; Left fork 197; Right fork 198; must die 0.
+Philo index 198; last_eating_time 0; Left fork 198; Right fork 1; must die 0.
+0 1 has taken a fork
+0 1 has taken a fork
+0 1 is eating
+0 3 has taken a fork
+0 3 has taken a fork
+0 3 is eating
+0 5 has taken a fork
+0 5 has taken a fork
+0 5 is eating
+0 7 has taken a fork
+0 7 has taken a fork
+0 7 is eating
+0 9 has taken a fork
+0 9 has taken a fork
+0 9 is eating
+0 11 has taken a fork
+0 11 has taken a fork
+0 11 is eating
+0 13 has taken a fork
+0 13 has taken a fork
+0 13 is eating
+1 15 has taken a fork
+1 15 has taken a fork
+1 15 is eating
+1 17 has taken a fork
+1 17 has taken a fork
+1 17 is eating
+1 19 has taken a fork
+1 19 has taken a fork
+1 19 is eating
+1 21 has taken a fork
+1 21 has taken a fork
+1 21 is eating
+1 23 has taken a fork
+1 23 has taken a fork
+1 23 is eating
+1 25 has taken a fork
+1 25 has taken a fork
+1 25 is eating
+1 27 has taken a fork
+1 27 has taken a fork
+1 27 is eating
+2 29 has taken a fork
+2 29 has taken a fork
+2 29 is eating
+2 31 has taken a fork
+2 31 has taken a fork
+2 31 is eating
+2 33 has taken a fork
+2 33 has taken a fork
+2 33 is eating
+2 35 has taken a fork
+2 35 has taken a fork
+2 35 is eating
+2 37 has taken a fork
+2 37 has taken a fork
+2 37 is eating
+2 39 has taken a fork
+2 39 has taken a fork
+2 39 is eating
+2 41 has taken a fork
+2 41 has taken a fork
+2 41 is eating
+3 43 has taken a fork
+3 43 has taken a fork
+3 43 is eating
+3 45 has taken a fork
+3 45 has taken a fork
+3 45 is eating
+3 47 has taken a fork
+3 47 has taken a fork
+3 47 is eating
+3 49 has taken a fork
+3 49 has taken a fork
+3 49 is eating
+3 51 has taken a fork
+3 51 has taken a fork
+3 51 is eating
+3 53 has taken a fork
+3 53 has taken a fork
+3 53 is eating
+3 55 has taken a fork
+3 55 has taken a fork
+3 55 is eating
+4 57 has taken a fork
+4 57 has taken a fork
+4 57 is eating
+4 59 has taken a fork
+4 59 has taken a fork
+4 59 is eating
+4 61 has taken a fork
+4 61 has taken a fork
+4 61 is eating
+4 63 has taken a fork
+4 63 has taken a fork
+4 63 is eating
+4 65 has taken a fork
+4 65 has taken a fork
+4 65 is eating
+4 67 has taken a fork
+4 67 has taken a fork
+4 67 is eating
+4 69 has taken a fork
+4 69 has taken a fork
+4 69 is eating
+5 71 has taken a fork
+5 71 has taken a fork
+5 71 is eating
+5 73 has taken a fork
+5 73 has taken a fork
+5 73 is eating
+5 75 has taken a fork
+5 75 has taken a fork
+5 75 is eating
+5 77 has taken a fork
+5 77 has taken a fork
+5 77 is eating
+5 79 has taken a fork
+5 79 has taken a fork
+5 79 is eating
+5 81 has taken a fork
+5 81 has taken a fork
+5 81 is eating
+5 83 has taken a fork
+5 83 has taken a fork
+5 83 is eating
+5 85 has taken a fork
+5 85 has taken a fork
+5 85 is eating
+5 87 has taken a fork
+5 87 has taken a fork
+5 87 is eating
+5 89 has taken a fork
+5 89 has taken a fork
+5 89 is eating
+5 91 has taken a fork
+5 91 has taken a fork
+5 91 is eating
+5 93 has taken a fork
+5 93 has taken a fork
+5 93 is eating
+5 95 has taken a fork
+5 95 has taken a fork
+5 95 is eating
+5 97 has taken a fork
+5 97 has taken a fork
+5 97 is eating
+5 99 has taken a fork
+5 99 has taken a fork
+5 99 is eating
+6 101 has taken a fork
+6 101 has taken a fork
+6 101 is eating
+6 103 has taken a fork
+6 103 has taken a fork
+6 103 is eating
+6 105 has taken a fork
+6 105 has taken a fork
+6 105 is eating
+6 107 has taken a fork
+6 107 has taken a fork
+6 107 is eating
+6 109 has taken a fork
+6 109 has taken a fork
+6 109 is eating
+6 111 has taken a fork
+6 111 has taken a fork
+6 111 is eating
+6 113 has taken a fork
+6 113 has taken a fork
+6 113 is eating
+6 115 has taken a fork
+6 115 has taken a fork
+6 115 is eating
+6 117 has taken a fork
+6 117 has taken a fork
+6 117 is eating
+6 119 has taken a fork
+6 119 has taken a fork
+6 119 is eating
+6 121 has taken a fork
+6 121 has taken a fork
+6 121 is eating
+6 123 has taken a fork
+6 123 has taken a fork
+6 123 is eating
+6 125 has taken a fork
+6 125 has taken a fork
+6 125 is eating
+6 127 has taken a fork
+6 127 has taken a fork
+6 127 is eating
+6 129 has taken a fork
+6 129 has taken a fork
+6 129 is eating
+6 131 has taken a fork
+6 131 has taken a fork
+6 131 is eating
+6 133 has taken a fork
+6 133 has taken a fork
+6 133 is eating
+7 135 has taken a fork
+7 135 has taken a fork
+7 135 is eating
+7 137 has taken a fork
+7 137 has taken a fork
+7 137 is eating
+7 139 has taken a fork
+7 139 has taken a fork
+7 139 is eating
+7 141 has taken a fork
+7 141 has taken a fork
+7 141 is eating
+7 143 has taken a fork
+7 143 has taken a fork
+7 143 is eating
+7 145 has taken a fork
+7 145 has taken a fork
+7 145 is eating
+7 147 has taken a fork
+7 147 has taken a fork
+7 147 is eating
+7 149 has taken a fork
+7 149 has taken a fork
+7 149 is eating
+7 151 has taken a fork
+7 151 has taken a fork
+7 151 is eating
+7 153 has taken a fork
+7 153 has taken a fork
+7 153 is eating
+7 155 has taken a fork
+7 155 has taken a fork
+7 155 is eating
+7 157 has taken a fork
+7 157 has taken a fork
+7 157 is eating
+7 159 has taken a fork
+7 159 has taken a fork
+7 159 is eating
+7 161 has taken a fork
+7 161 has taken a fork
+7 161 is eating
+7 163 has taken a fork
+7 163 has taken a fork
+7 163 is eating
+7 165 has taken a fork
+7 165 has taken a fork
+8 165 is eating
+8 167 has taken a fork
+8 167 has taken a fork
+8 167 is eating
+8 169 has taken a fork
+8 169 has taken a fork
+8 169 is eating
+8 171 has taken a fork
+8 171 has taken a fork
+8 171 is eating
+8 173 has taken a fork
+8 173 has taken a fork
+8 173 is eating
+8 175 has taken a fork
+8 175 has taken a fork
+8 175 is eating
+8 177 has taken a fork
+8 177 has taken a fork
+8 177 is eating
+8 179 has taken a fork
+8 179 has taken a fork
+8 179 is eating
+8 181 has taken a fork
+8 181 has taken a fork
+8 181 is eating
+8 183 has taken a fork
+8 183 has taken a fork
+8 183 is eating
+8 185 has taken a fork
+8 185 has taken a fork
+8 185 is eating
+8 187 has taken a fork
+8 187 has taken a fork
+8 187 is eating
+8 189 has taken a fork
+8 189 has taken a fork
+8 189 is eating
+9 191 has taken a fork
+9 191 has taken a fork
+9 191 is eating
+9 193 has taken a fork
+9 193 has taken a fork
+9 193 is eating
+9 195 has taken a fork
+9 195 has taken a fork
+9 195 is eating
+9 197 has taken a fork
+9 197 has taken a fork
+9 197 is eating
+200 1 is sleeping
+200 2 has taken a fork
+200 198 has taken a fork
+200 2 has taken a fork
+200 3 is sleeping
+200 2 is eating
+200 4 has taken a fork
+200 5 is sleeping
+200 4 has taken a fork
+200 4 is eating
+200 6 has taken a fork
+200 7 is sleeping
+200 6 has taken a fork
+200 6 is eating
+200 8 has taken a fork
+200 9 is sleeping
+200 8 has taken a fork
+200 8 is eating
+200 10 has taken a fork
+200 11 is sleeping
+200 10 has taken a fork
+200 10 is eating
+200 12 has taken a fork
+201 13 is sleeping
+201 12 has taken a fork
+201 12 is eating
+201 14 has taken a fork
+201 15 is sleeping
+201 14 has taken a fork
+201 14 is eating
+201 16 has taken a fork
+201 17 is sleeping
+201 16 has taken a fork
+201 16 is eating
+201 18 has taken a fork
+201 18 has taken a fork
+201 18 is eating
+201 20 has taken a fork
+201 19 is sleeping
+201 21 is sleeping
+201 20 has taken a fork
+201 20 is eating
+201 22 has taken a fork
+201 23 is sleeping
+201 22 has taken a fork
+201 22 is eating
+201 24 has taken a fork
+201 25 is sleeping
+201 24 has taken a fork
+201 26 has taken a fork
+201 24 is eating
+201 27 is sleeping
+201 26 has taken a fork
+201 26 is eating
+202 28 has taken a fork
+202 29 is sleeping
+202 30 has taken a fork
+202 28 has taken a fork
+202 28 is eating
+202 31 is sleeping
+202 30 has taken a fork
+202 30 is eating
+202 32 has taken a fork
+202 33 is sleeping
+202 32 has taken a fork
+202 32 is eating
+202 34 has taken a fork
+202 35 is sleeping
+202 34 has taken a fork
+202 36 has taken a fork
+202 34 is eating
+202 37 is sleeping
+202 36 has taken a fork
+202 36 is eating
+202 38 has taken a fork
+202 39 is sleeping
+202 38 has taken a fork
+202 38 is eating
+202 40 has taken a fork
+203 41 is sleeping
+203 40 has taken a fork
+203 42 has taken a fork
+203 40 is eating
+203 43 is sleeping
+203 42 has taken a fork
+203 42 is eating
+203 44 has taken a fork
+203 45 is sleeping
+203 44 has taken a fork
+203 44 is eating
+203 46 has taken a fork
+203 47 is sleeping
+203 46 has taken a fork
+203 46 is eating
+203 48 has taken a fork
+203 49 is sleeping
+203 48 has taken a fork
+203 48 is eating
+203 50 has taken a fork
+203 51 is sleeping
+203 50 has taken a fork
+203 50 is eating
+203 52 has taken a fork
+203 53 is sleeping
+203 52 has taken a fork
+203 52 is eating
+203 54 has taken a fork
+204 55 is sleeping
+204 54 has taken a fork
+204 54 is eating
+204 56 has taken a fork
+204 57 is sleeping
+204 56 has taken a fork
+204 56 is eating
+204 58 has taken a fork
+204 59 is sleeping
+204 58 has taken a fork
+204 58 is eating
+204 60 has taken a fork
+204 61 is sleeping
+204 60 has taken a fork
+204 60 is eating
+204 62 has taken a fork
+204 63 is sleeping
+204 62 has taken a fork
+204 62 is eating
+204 64 has taken a fork
+204 65 is sleeping
+204 64 has taken a fork
+204 64 is eating
+204 66 has taken a fork
+204 67 is sleeping
+204 66 has taken a fork
+204 66 is eating
+204 68 has taken a fork
+204 69 is sleeping
+204 68 has taken a fork
+204 68 is eating
+204 70 has taken a fork
+205 71 is sleeping
+205 70 has taken a fork
+205 70 is eating
+205 72 has taken a fork
+205 73 is sleeping
+205 72 has taken a fork
+205 72 is eating
+205 74 has taken a fork
+205 75 is sleeping
+205 77 is sleeping
+205 78 has taken a fork
+205 74 has taken a fork
+205 76 has taken a fork
+205 74 is eating
+205 76 has taken a fork
+205 76 is eating
+205 79 is sleeping
+205 78 has taken a fork
+205 78 is eating
+205 80 has taken a fork
+205 80 has taken a fork
+205 80 is eating
+205 81 is sleeping
+205 82 has taken a fork
+205 83 is sleeping
+205 82 has taken a fork
+205 82 is eating
+205 85 is sleeping
+205 84 has taken a fork
+205 86 has taken a fork
+205 84 has taken a fork
+205 84 is eating
+205 87 is sleeping
+205 86 has taken a fork
+205 86 is eating
+205 88 has taken a fork
+205 89 is sleeping
+205 88 has taken a fork
+205 88 is eating
+205 90 has taken a fork
+205 91 is sleeping
+205 90 has taken a fork
+205 90 is eating
+205 92 has taken a fork
+205 93 is sleeping
+205 92 has taken a fork
+205 92 is eating
+205 94 has taken a fork
+205 97 is sleeping
+205 95 is sleeping
+205 96 has taken a fork
+205 98 has taken a fork
+205 96 has taken a fork
+205 96 is eating
+205 94 has taken a fork
+205 94 is eating
+206 99 is sleeping
+206 100 has taken a fork
+206 98 has taken a fork
+206 98 is eating
+206 101 is sleeping
+206 102 has taken a fork
+206 100 has taken a fork
+206 100 is eating
+206 103 is sleeping
+206 102 has taken a fork
+206 102 is eating
+206 104 has taken a fork
+206 107 is sleeping
+206 105 is sleeping
+206 104 has taken a fork
+206 104 is eating
+206 108 has taken a fork
+206 106 has taken a fork
+206 106 has taken a fork
+206 106 is eating
+206 109 is sleeping
+206 108 has taken a fork
+206 110 has taken a fork
+206 108 is eating
+206 111 is sleeping
+206 112 has taken a fork
+206 110 has taken a fork
+206 110 is eating
+206 113 is sleeping
+206 112 has taken a fork
+206 112 is eating
+206 114 has taken a fork
+206 115 is sleeping
+206 114 has taken a fork
+206 114 is eating
+206 116 has taken a fork
+206 117 is sleeping
+206 116 has taken a fork
+206 116 is eating
+206 118 has taken a fork
+206 118 has taken a fork
+206 119 is sleeping
+206 118 is eating
+206 120 has taken a fork
+206 121 is sleeping
+206 120 has taken a fork
+206 122 has taken a fork
+206 120 is eating
+206 123 is sleeping
+206 124 has taken a fork
+206 122 has taken a fork
+206 122 is eating
+206 125 is sleeping
+206 124 has taken a fork
+206 124 is eating
+206 126 has taken a fork
+206 126 has taken a fork
+206 126 is eating
+206 127 is sleeping
+206 128 has taken a fork
+206 129 is sleeping
+206 128 has taken a fork
+206 128 is eating
+206 130 has taken a fork
+206 130 has taken a fork
+206 131 is sleeping
+206 130 is eating
+206 132 has taken a fork
+207 133 is sleeping
+207 132 has taken a fork
+207 132 is eating
+207 134 has taken a fork
+207 134 has taken a fork
+207 135 is sleeping
+207 134 is eating
+207 136 has taken a fork
+207 137 is sleeping
+207 136 has taken a fork
+207 136 is eating
+207 138 has taken a fork
+207 139 is sleeping
+207 138 has taken a fork
+207 138 is eating
+207 140 has taken a fork
+207 141 is sleeping
+207 140 has taken a fork
+207 142 has taken a fork
+207 140 is eating
+207 143 is sleeping
+207 142 has taken a fork
+207 142 is eating
+207 144 has taken a fork
+207 145 is sleeping
+207 144 has taken a fork
+207 146 has taken a fork
+207 144 is eating
+207 146 has taken a fork
+207 147 is sleeping
+207 146 is eating
+207 148 has taken a fork
+207 149 is sleeping
+207 148 has taken a fork
+207 148 is eating
+207 150 has taken a fork
+207 150 has taken a fork
+207 150 is eating
+207 151 is sleeping
+207 152 has taken a fork
+207 153 is sleeping
+207 154 has taken a fork
+207 152 has taken a fork
+207 152 is eating
+207 154 has taken a fork
+207 155 is sleeping
+207 154 is eating
+207 156 has taken a fork
+207 157 is sleeping
+207 156 has taken a fork
+207 156 is eating
+207 158 has taken a fork
+207 158 has taken a fork
+207 158 is eating
+207 159 is sleeping
+207 160 has taken a fork
+207 161 is sleeping
+207 160 has taken a fork
+207 160 is eating
+207 162 has taken a fork
+207 162 has taken a fork
+207 162 is eating
+207 163 is sleeping
+208 164 has taken a fork
+208 165 is sleeping
+208 167 is sleeping
+208 164 has taken a fork
+208 164 is eating
+208 168 has taken a fork
+208 166 has taken a fork
+208 166 has taken a fork
+208 166 is eating
+208 169 is sleeping
+208 168 has taken a fork
+208 168 is eating
+208 170 has taken a fork
+208 171 is sleeping
+208 170 has taken a fork
+208 170 is eating
+208 172 has taken a fork
+208 173 is sleeping
+208 172 has taken a fork
+208 172 is eating
+208 174 has taken a fork
+208 174 has taken a fork
+208 175 is sleeping
+208 176 has taken a fork
+208 174 is eating
+208 177 is sleeping
+208 176 has taken a fork
+208 176 is eating
+208 178 has taken a fork
+208 179 is sleeping
+208 178 has taken a fork
+208 178 is eating
+208 180 has taken a fork
+208 180 has taken a fork
+208 181 is sleeping
+208 180 is eating
+208 182 has taken a fork
+208 183 is sleeping
+208 182 has taken a fork
+208 182 is eating
+208 184 has taken a fork
+208 185 is sleeping
+208 184 has taken a fork
+208 184 is eating
+208 186 has taken a fork
+208 187 is sleeping
+208 186 has taken a fork
+208 186 is eating
+208 188 has taken a fork
+209 189 is sleeping
+209 190 has taken a fork
+209 188 has taken a fork
+209 188 is eating
+209 191 is sleeping
+209 190 has taken a fork
+209 190 is eating
+209 192 has taken a fork
+209 193 is sleeping
+209 192 has taken a fork
+209 192 is eating
+209 194 has taken a fork
+209 195 is sleeping
+209 194 has taken a fork
+209 194 is eating
+209 196 has taken a fork
+209 197 is sleeping
+209 196 has taken a fork
+209 198 has taken a fork
+209 198 is eating
+209 196 is eating
+400 1 is thinking
+400 3 is thinking
+400 2 is sleeping
+400 5 is thinking
+400 4 is sleeping
+400 3 has taken a fork
+400 3 has taken a fork
+400 3 is eating
+400 6 is sleeping
+400 7 is thinking
+400 5 has taken a fork
+400 5 has taken a fork
+400 5 is eating
+400 9 is thinking
+400 8 is sleeping
+400 7 has taken a fork
+400 7 has taken a fork
+400 7 is eating
+400 11 is thinking
+400 10 is sleeping
+401 9 has taken a fork
+401 9 has taken a fork
+401 9 is eating
+401 12 is sleeping
+401 13 is thinking
+401 11 has taken a fork
+401 11 has taken a fork
+401 11 is eating
+401 15 is thinking
+401 14 is sleeping
+401 13 has taken a fork
+401 13 has taken a fork
+401 13 is eating
+401 17 is thinking
+401 16 is sleeping
+401 15 has taken a fork
+401 15 has taken a fork
+401 15 is eating
+401 18 is sleeping
+401 19 is thinking
+401 17 has taken a fork
+401 17 has taken a fork
+401 17 is eating
+401 20 is sleeping
+401 21 is thinking
+401 19 has taken a fork
+401 19 has taken a fork
+401 19 is eating
+401 23 is thinking
+401 22 is sleeping
+401 21 has taken a fork
+401 21 has taken a fork
+401 21 is eating
+401 25 is thinking
+401 24 is sleeping
+402 23 has taken a fork
+402 23 has taken a fork
+402 23 is eating
+402 27 is thinking
+402 26 is sleeping
+402 25 has taken a fork
+402 25 has taken a fork
+402 25 is eating
+402 29 is thinking
+402 28 is sleeping
+402 27 has taken a fork
+402 27 has taken a fork
+402 27 is eating
+402 31 is thinking
+402 30 is sleeping
+402 29 has taken a fork
+402 29 has taken a fork
+402 29 is eating
+402 33 is thinking
+402 32 is sleeping
+402 31 has taken a fork
+402 31 has taken a fork
+402 31 is eating
+402 34 is sleeping
+402 35 is thinking
+402 33 has taken a fork
+402 33 has taken a fork
+402 33 is eating
+402 37 is thinking
+402 36 is sleeping
+402 35 has taken a fork
+402 35 has taken a fork
+402 35 is eating
+402 39 is thinking
+402 38 is sleeping
+403 37 has taken a fork
+403 37 has taken a fork
+403 37 is eating
+403 41 is thinking
+403 40 is sleeping
+403 39 has taken a fork
+403 39 has taken a fork
+403 39 is eating
+403 43 is thinking
+403 42 is sleeping
+403 41 has taken a fork
+403 41 has taken a fork
+403 41 is eating
+403 45 is thinking
+403 44 is sleeping
+403 43 has taken a fork
+403 43 has taken a fork
+403 43 is eating
+403 47 is thinking
+403 46 is sleeping
+403 45 has taken a fork
+403 45 has taken a fork
+403 45 is eating
+403 48 is sleeping
+403 49 is thinking
+403 47 has taken a fork
+403 47 has taken a fork
+403 47 is eating
+403 50 is sleeping
+403 51 is thinking
+403 49 has taken a fork
+403 49 has taken a fork
+403 49 is eating
+403 52 is sleeping
+403 53 is thinking
+403 51 has taken a fork
+403 51 has taken a fork
+403 51 is eating
+404 55 is thinking
+404 54 is sleeping
+404 53 has taken a fork
+404 53 has taken a fork
+404 53 is eating
+404 56 is sleeping
+404 57 is thinking
+404 55 has taken a fork
+404 5Program exit
+ Someone if dea5 has taken a fork
+404 55 is eating
+404 59 is thinking
+404 58 is sleeping
+404 57 has taken a fork
+404 57 has taken a fork
+404 57 is eating
+404 60 is sleeping
+404 61 is thinking
+404 59 has taken a fork
+404 59 has taken a fork
+404 59 is eating
+404 63 is thinking
+404 62 is sleeping
+404 61 has taken a fork
+404 61 has taken a fork
+404 61 is eating
+404 65 is thinking
+404 64 is sleeping
+404 63 has taken a fork
+404 63 has taken a fork
+404 63 is eating
+404 67 is thinking
+404 66 is sleeping
+404 65 has taken a fork
+404 65 has taken a fork
+404 65 is eating
+404 69 is thinking
+405 68 is sleeping
+405 67 has taken a fork
+405 67 has taken a fork
+405 67 is eating
+405 1 is starving
+the end ~para-pa-para pa!

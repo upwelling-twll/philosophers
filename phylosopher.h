@@ -61,7 +61,7 @@ int		monitore_endlessly(t_param *data);
 int		monitore_while_turns(t_param *data);
 
 //algorithm.c
-void	*print_action(int n, int action);
+void	*print_action(int n, int action, t_param *data);
 int		phylosophers_act(t_param *data, t_fork **forks);
 
 //parsing.c
