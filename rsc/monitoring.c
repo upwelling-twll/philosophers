@@ -16,13 +16,23 @@ int	is_dead(t_param *data, t_phlst *philo)
 	// 	pthread_mutex_unlock(&(data->mutex_printf));	
 	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) * 1000000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
 	// time_after_thinking = (cur.tv_sec - philo->thinking_time.tv_sec) * 1000000 + (cur.tv_usec - philo->thinking_time.tv_usec);
-	pthread_mutex_lock(&(data->mutex_printf));	
-	//printf("lst_eating_time | time_to_die\n        %li       |     %i     \n", time_after_eating, data->time_to_die);
-	pthread_mutex_unlock(&(data->mutex_printf));
-	if (time_after_eating > data->time_to_die)
+	// pthread_mutex_lock(&(data->mutex_printf));	
+	// //printf("lst_eating_time | time_to_die\n        %li       |     %i     \n", time_after_eating, data->time_to_die);
+	// pthread_mutex_unlock(&(data->mutex_printf));
+	pthread_mutex_lock(&(philo->philo_mutex));	
+	if (philo->is_eating == 1)
 	{
+		pthread_mutex_unlock(&(philo->philo_mutex));
+		return (0);
+	}
+	pthread_mutex_unlock(&(philo->philo_mutex));
+	if (time_after_eating > data->time_to_die )
+	{
+		pthread_mutex_lock(&(data->param_mutex));
+		data->prog_must_die = 1;
+		pthread_mutex_unlock(&(data->param_mutex));
 		pthread_mutex_lock(&(data->mutex_printf));	
-		print_action(philo->index, 6,  *(philo->param));
+		print_action(philo->index, 6,  *(philo->param)); //starving - died
 		// printf("prog_start_time: sec:%zu usec:%zu\n",data->prog_start.tv_sec, data->prog_start.tv_usec);
 		// printf("thnk_start_time: sec:%zu usec:%zu\n", philo->thinking_time.tv_sec, philo->thinking_time.tv_usec);
 		// printf("current_rw_time: sec:%zu usec:%zu\n", cur.tv_sec, cur.tv_usec);

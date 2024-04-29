@@ -27,6 +27,9 @@ typedef struct s_list_phylo
 
 	int					must_die;
 	struct s_param		**param;
+
+	int					is_eating;
+	pthread_mutex_t		philo_mutex;
 }			t_phlst;
 
 typedef struct s_param
@@ -49,7 +52,7 @@ typedef struct s_param
 void	join_all_threads(t_param *data, int n);
 
 //usleep.c
-void	my_usleep(int	period);
+void	my_usleep(long long period, t_param *data);
 
 //exit.c
 void	destroy_all_mutex(t_param *data, t_fork **forks);

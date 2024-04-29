@@ -19,10 +19,10 @@ int	exit_phylo(t_param *data, int flag)
 	if (data != NULL)
 		free(data);
 	if (flag == 2)
-		write(1, "Invalid parameters\n", 20);
+		printf("Invalid parameters\n");
 	if (flag == 1)
-		write(1, "Program exit\n", 14);
+		printf("Program exit\n");
 	if (data ->prog_must_die == 1)
-		write(1, "Someone if dead\n", 14);
+		printf("Someone is dead\n");
 	return (1);
 }

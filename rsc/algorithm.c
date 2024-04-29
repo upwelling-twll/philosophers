@@ -24,7 +24,9 @@ void	*print_action(int n, int action, t_param *data)
 	// if (action == 5 && n == data->n)
 	// 	printf("took left fork\n");
 	if (action == 6)
-		printf("is starving\n");
+		printf("died\n");
+	// if (action == 6)
+	// 	printf("is starving\n");
 	if (action == 7)
 		printf("is thinking\n");
 	if (action == 9)
@@ -145,14 +147,20 @@ void	*philo(void *one_philo)
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
+		pthread_mutex_lock(&(plist->philo_mutex));	
+		plist->is_eating = 1;
+		pthread_mutex_unlock(&(plist->philo_mutex));
 		pthread_mutex_lock(&shared_data->mutex_printf);
 		print_action(plist->index, 1,  shared_data); //eating
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 			gettimeofday(&cur_time, NULL);
 		plist->lst_eating_time = cur_time;
 		plist->turns ++;
-		usleep(shared_data->time_to_eat);
+		my_usleep(shared_data->time_to_eat, shared_data);
 		
+		pthread_mutex_lock(&(plist->philo_mutex));	
+		plist->is_eating = 0;
+		pthread_mutex_unlock(&(plist->philo_mutex));
 		// int	has_eaten;
 		// has_eaten = (cur_time.tv_sec - plist->lst_eating_time.tv_sec)*100000 + (cur_time.tv_usec - plist->lst_eating_time.tv_usec);
 		// pthread_mutex_lock(&shared_data->mutex_printf);
@@ -173,7 +181,7 @@ void	*philo(void *one_philo)
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action(plist->index, 2,  shared_data); //sleeping
 		pthread_mutex_unlock(&shared_data->mutex_printf);
-		usleep(shared_data->time_to_sleep);
+		my_usleep(shared_data->time_to_sleep, shared_data);
 		// if (someone_is_dead(shared_data, sd_mutex))
 		// 	return (NULL);
 		i++;

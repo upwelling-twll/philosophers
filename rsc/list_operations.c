@@ -27,6 +27,8 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *d
 		plist[i] -> index = i + 1;
 		plist[i]->must_die = 0;
 		plist[i]->turns = 0;
+		plist[i]->is_eating = 0;
+		pthread_mutex_init(&plist[i]->philo_mutex, NULL);
 		if (i != n - 1)
 		{
 			plist[i] -> left_fork = forks[i];
