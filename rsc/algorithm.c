@@ -153,8 +153,12 @@ void	*philo(void *one_philo)
 		print_action(plist->index, 1,  shared_data); //eating
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 			gettimeofday(&cur_time, NULL);
+		pthread_mutex_lock(&(plist->philo_mutex));
 		plist->lst_eating_time = cur_time;
+		pthread_mutex_unlock(&(plist->philo_mutex));
+		pthread_mutex_lock(&(plist->philo_mutex));
 		plist->turns ++;
+		pthread_mutex_unlock(&(plist->philo_mutex));
 		usleep(shared_data->time_to_eat);
 		// my_usleep(shared_data->time_to_eat, shared_data);
 		

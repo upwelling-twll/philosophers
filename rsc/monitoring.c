@@ -31,15 +31,33 @@ int	is_dead(t_param *data, t_phlst *philo)
 	return (0);
 }
 
+int	everyone_ate_turns(int turns_to_eat, t_phlst **philos, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		pthread_mutex_lock(&(philos[i]->philo_mutex));
+		if (philos[i]->turns != turns_to_eat)
+		{
+			pthread_mutex_unlock(&(philos[i]->philo_mutex));
+			return (0);
+		}
+		pthread_mutex_unlock(&(philos[i]->philo_mutex));
+		i++;
+	}
+	return (1);
+}
+
 int	monitore_while_turns(t_param *data)
 {
 	int	i;
-	int	t;
 
 	i = 0;
-	t = 0;
-	while (t < data->turns_to_eat)
+	while (!(everyone_ate_turns(data->turns_to_eat, data->plist, data->n)))
 	{
+		i = 0;
 		while (i < data->n)
 		{
 			if (is_dead(data, data->plist[i]))
@@ -54,7 +72,6 @@ int	monitore_while_turns(t_param *data)
 			}
 			i++;
 		}
-		t++;
 	}
 	return (0);
 }
