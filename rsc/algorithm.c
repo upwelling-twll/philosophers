@@ -115,19 +115,12 @@ void	*philo(void *one_philo)
 	{
 		if (plist->turns != 0)
 		{
-			// struct timeval thinking_time;
-			// gettimeofday(&thinking_time, NULL);
-			// plist->thinking_time = thinking_time;
 			if (someone_is_dead(shared_data, sd_mutex))
 				return (NULL);
 			pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action(plist->index, 7, shared_data); //thinking
-			//printf("thnk_start_time: sec:%zu usec:%zu\n", thinking_time.tv_sec, thinking_time.tv_usec);
 			pthread_mutex_unlock(&shared_data->mutex_printf);
 			usleep(50);
-			// pthread_mutex_lock(&shared_data->mutex_printf);
-			// print_action(plist->index, 12); //thinking
-			// pthread_mutex_unlock(&shared_data->mutex_printf);
 		}
 		if (plist->index%2 == 0)
 			usleep(2500);
@@ -168,21 +161,10 @@ void	*philo(void *one_philo)
 		pthread_mutex_lock(&(plist->philo_mutex));	
 		plist->is_eating = 0;
 		pthread_mutex_unlock(&(plist->philo_mutex));
-		// int	has_eaten;
-		// has_eaten = (cur_time.tv_sec - plist->lst_eating_time.tv_sec)*100000 + (cur_time.tv_usec - plist->lst_eating_time.tv_usec);
-		// pthread_mutex_lock(&shared_data->mutex_printf);
-		// 	printf("has eaten period:%i, turns_time=%i\n", has_eaten, plist->turns); //debug
-		// pthread_mutex_unlock(&shared_data->mutex_printf);
 		plist->left_fork->last_user = plist->index;
 		plist->right_fork->last_user = plist->index;
 		pthread_mutex_unlock(min_fork(plist));
-		// pthread_mutex_lock(&shared_data->mutex_printf);
-		// 	print_action(plist->index, 10); //not_usin_min_fork
-		// pthread_mutex_unlock(&shared_data->mutex_printf);
 		pthread_mutex_unlock(max_fork(plist));
-		// pthread_mutex_lock(&shared_data->mutex_printf);
-		// 	print_action(plist->index, 11); //not_usin_max_fork
-		// pthread_mutex_unlock(&shared_data->mutex_printf);
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
 		pthread_mutex_lock(&shared_data->mutex_printf);
