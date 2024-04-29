@@ -135,13 +135,19 @@ void	*philo(void *one_philo)
 			usleep(50);
 		if (someone_is_dead(shared_data, sd_mutex))
 			return (NULL);
-		pthread_mutex_lock(min_fork(plist));
+		if (shared_data->n %2 != 0)
+			pthread_mutex_lock(min_fork(plist));
+		else
+			pthread_mutex_lock(max_fork(plist));
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action((plist)->index, 4,  shared_data); //took_left_fork
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 		if (someone_is_dead(shared_data, sd_mutex))
-			return (NULL);	
-		pthread_mutex_lock(max_fork((plist)));
+			return (NULL);
+		if (shared_data->n % 2 != 0)
+			pthread_mutex_lock(max_fork((plist)));
+		else
+			pthread_mutex_lock(min_fork((plist)));
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action(plist->index, 5,  shared_data); //took_right_fork
 		pthread_mutex_unlock(&shared_data->mutex_printf);
@@ -156,7 +162,8 @@ void	*philo(void *one_philo)
 			gettimeofday(&cur_time, NULL);
 		plist->lst_eating_time = cur_time;
 		plist->turns ++;
-		my_usleep(shared_data->time_to_eat, shared_data);
+		usleep(shared_data->time_to_eat);
+		// my_usleep(shared_data->time_to_eat, shared_data);
 		
 		pthread_mutex_lock(&(plist->philo_mutex));	
 		plist->is_eating = 0;
@@ -181,7 +188,8 @@ void	*philo(void *one_philo)
 		pthread_mutex_lock(&shared_data->mutex_printf);
 			print_action(plist->index, 2,  shared_data); //sleeping
 		pthread_mutex_unlock(&shared_data->mutex_printf);
-		my_usleep(shared_data->time_to_sleep, shared_data);
+		usleep(shared_data->time_to_sleep);
+		// my_usleep(shared_data->time_to_sleep, shared_data);
 		// if (someone_is_dead(shared_data, sd_mutex))
 		// 	return (NULL);
 		i++;

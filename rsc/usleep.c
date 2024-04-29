@@ -3,15 +3,14 @@
 long long	timestamp(void)
 {
 	struct timeval	timestrc;
-	long long	time;
 
 	gettimeofday(&timestrc, NULL);
-	time = timestrc.tv_sec * 1000 + timestrc.tv_usec / 1000;
-	return (time);
+	return((timestrc.tv_sec * 1000) + (timestrc.tv_usec / 1000)* 1000);
 }
 
 long long	time_diff(long long past, long long present)
 {
+	// printf("DIFF=%lli\n", present - past);
 	return(present - past);
 }
 
@@ -34,6 +33,7 @@ void		my_usleep(long long time, t_param *data)
 	start = timestamp();
 	while (!(prog_end(data)))
 	{
+		// printf("goal: %lli\n", time);
 		if (time_diff(start, timestamp()) >= time)
 			break ;
 		usleep(50);
