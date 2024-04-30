@@ -4,7 +4,6 @@ int	main(int argc, char *argv[])
 {
 	t_param	*data;
 	t_fork	*forks[200];
-	int		i;
 
 	data = parsing(argc, argv);
 	if (data == NULL)

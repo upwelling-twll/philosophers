@@ -15,7 +15,7 @@ void	init_forks(t_fork **forks, int n)
 	}
 }
 
-t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *data)
+t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *d
 	while(i < n)
 	{
 		plist[i] = (t_phlst *)malloc(sizeof(t_phlst));
-		plist[i] -> index = i + 1;
+		plist[i]->index = i + 1;
 		plist[i]->must_die = 0;
 		plist[i]->turns = 0;
 		plist[i]->is_eating = 0;
@@ -40,7 +40,6 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *d
 			plist[i] -> right_fork = forks[0];
 		}
 		i++;
-		//plist[i]->param = data;
 	}
 	plist[i] = NULL;
 	return (*plist);

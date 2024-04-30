@@ -42,6 +42,7 @@ typedef struct s_param
 	int					turns_to_eat;
 	struct timeval		prog_start;
 	t_phlst				**plist;
+	t_fork				**forks;
 
 	int					prog_must_die;
 	pthread_mutex_t		param_mutex;
@@ -71,11 +72,11 @@ int		phylosophers_act(t_param *data, t_fork **forks);
 t_param	*parsing(int argc, char **argv);
 
 //list_operations.c
-t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks, t_param *data);
+t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks);
 
 
 
 //dbg.c
-void	print_data_list(t_param *data, t_phlst **forks);
+void	print_data_list(t_param *data);
 
 #endif

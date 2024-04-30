@@ -14,15 +14,37 @@ void	destroy_all_mutex(t_param *data, t_fork **forks)
 	}
 }
 
+void	clean_plist_and_forks(t_param *data)
+{
+	int	i;
+	t_fork	**forks;
+
+	i = 0;
+	forks = data->forks;
+	while (i < data->n)
+	{
+		free(forks[i]);
+		i++;
+	}
+	i = 0;
+	while (i < data->n)
+	{
+		free(data->plist[i]);
+		i++;
+	}
+}
+
 int	exit_phylo(t_param *data, int flag)
 {
-	if (data != NULL)
-		free(data);
 	if (flag == 2)
 		printf("Invalid parameters\n");
 	if (flag == 1)
 		printf("Program exit\n");
 	if (data ->prog_must_die == 1)
 		printf("Someone is dead\n");
+	// if (flag != 2)
+	// 	clean_plist_and_forks(data);
+	if (data != NULL)
+		free(data);
 	return (1);
 }

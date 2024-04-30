@@ -181,6 +181,7 @@ void	*philo(void *one_philo)
 		i++;
 		l = l + k;
 	}
+	return (one_philo);
 }
 
 void	join_all_threads(t_param *data, int n)
@@ -199,16 +200,14 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 {
 	int		n;
 	int		i;
-	int		turns;
 	t_phlst	*plist[200];
-	t_phlst	*head;
 	struct timeval	start;
 
 	n = 0;
 	i = 0;
-	init_plist_and_forks(plist, data->n, forks, data);
+	init_plist_and_forks(plist, data->n, forks);
 	data->plist = plist;
-	//print_data_list(data, plist); //dbg
+	data->forks = forks;
 	pthread_mutex_init(&data->mutex_printf, NULL);
 	pthread_mutex_init(&data->param_mutex, NULL);
 	data->prog_must_die = 0;

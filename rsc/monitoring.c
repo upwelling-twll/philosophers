@@ -3,7 +3,6 @@
 int	is_dead(t_param *data, t_phlst *philo)
 {
 	size_t	time_after_eating;
-	size_t	time_after_thinking;
 	struct timeval	cur;
 
 	if (philo->turns == 0)
@@ -24,7 +23,7 @@ int	is_dead(t_param *data, t_phlst *philo)
 		data->prog_must_die = 1;
 		pthread_mutex_unlock(&(data->param_mutex));
 		pthread_mutex_lock(&(data->mutex_printf));	
-		print_action(philo->index, 6,  *(philo->param)); //starving - died
+		print_action(philo->index, 6,  *(philo->param));
 		pthread_mutex_unlock(&(data->mutex_printf));
 		return (1);
 	}

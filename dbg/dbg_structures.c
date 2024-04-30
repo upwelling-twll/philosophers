@@ -9,7 +9,7 @@ void	print_philo_struct(t_phlst *plist)
 	printf("must die %i.\n", plist->must_die);
 }
 
-void	print_data_list(t_param *data, t_phlst **forks)
+void	print_data_list(t_param *data)
 {
 	int	i;
 
