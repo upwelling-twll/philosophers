@@ -53,7 +53,7 @@ typedef struct s_param
 void	join_all_threads(t_param *data, int n);
 
 //usleep.c
-void	my_usleep(long long period, t_param *data);
+int	my_usleep(long long period, t_param *data);
 
 //exit.c
 void	destroy_all_mutex(t_param *data, t_fork **forks);

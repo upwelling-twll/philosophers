@@ -26,7 +26,7 @@ int	prog_end(t_param *data)
 	return (0);
 }
 
-void		my_usleep(long long time, t_param *data)
+int		my_usleep(long long time, t_param *data)
 {
 	long long start;
 
@@ -35,9 +35,10 @@ void		my_usleep(long long time, t_param *data)
 	{
 		// printf("goal: %lli\n", time);
 		if (time_diff(start, timestamp()) >= time)
-			break ;
+			return (0);
 		usleep(50);
 	}
+	return (1);
 }
 
 // void	my_usleep(int	period)

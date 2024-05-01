@@ -123,7 +123,10 @@ void	*philo(void *one_philo)
 			usleep(50);
 		}
 		if (plist->index%2 == 0)
-			usleep(2500);
+		{
+			if (my_usleep(2500, shared_data))
+				return (NULL);
+		}
 		while (min_fork_last_user(plist) == plist->index || max_fork_last_user(plist) == plist->index)
 			usleep(50);
 		if (someone_is_dead(shared_data, sd_mutex))
@@ -160,8 +163,8 @@ void	*philo(void *one_philo)
 		plist->turns ++;
 		pthread_mutex_unlock(&(plist->philo_mutex));
 		usleep(shared_data->time_to_eat);
-		// my_usleep(shared_data->time_to_eat, shared_data);
-		
+		if (my_usleep(shared_data->time_to_eat, shared_data))
+			return (NULL);
 		pthread_mutex_lock(&(plist->philo_mutex));	
 		plist->is_eating = 0;
 		pthread_mutex_unlock(&(plist->philo_mutex));
@@ -175,9 +178,10 @@ void	*philo(void *one_philo)
 			print_action(plist->index, 2,  shared_data); //sleeping
 		pthread_mutex_unlock(&shared_data->mutex_printf);
 		usleep(shared_data->time_to_sleep);
-		// my_usleep(shared_data->time_to_sleep, shared_data);
-		// if (someone_is_dead(shared_data, sd_mutex))
-		// 	return (NULL);
+		if (my_usleep(shared_data->time_to_sleep, shared_data))
+			return (NULL);
+		if (someone_is_dead(shared_data, sd_mutex))
+			return (NULL);
 		i++;
 		l = l + k;
 	}
@@ -217,7 +221,7 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 	{
 		data->plist[i]->param = &data;
 		data->plist[i]->lst_eating_time = data->prog_start = start;
-		pthread_create(&data->plist[i]->thread, NULL, philo_test, (void *)(data->plist[i]));
+		pthread_create(&data->plist[i]->thread, NULL, philo, (void *)(data->plist[i]));
 		n++;
 		i++;
 	}

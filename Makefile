@@ -3,7 +3,7 @@ NAME = phylosopher
 NAME_BONUS = phylosopher_bonus
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=thread #-fsanitize=thread  #-g -fsanitize=address #-g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
 RM = rm -f
 
 SRCS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
