@@ -41,6 +41,5 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 		}
 		i++;
 	}
-	plist[i] = NULL;
 	return (*plist);
 }

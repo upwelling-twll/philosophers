@@ -217,7 +217,7 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 	{
 		data->plist[i]->param = &data;
 		data->plist[i]->lst_eating_time = data->prog_start = start;
-		pthread_create(&data->plist[i]->thread, NULL, philo, (void *)(data->plist[i]));
+		pthread_create(&data->plist[i]->thread, NULL, philo_test, (void *)(data->plist[i]));
 		n++;
 		i++;
 	}
@@ -232,7 +232,7 @@ int	phylosophers_act(t_param *data, t_fork **forks) //optional - turns_to_eat
 			return (1);
 	}
 	join_all_threads(data, data->n);
-	//destroy_all_mutex(data, forks);
+	destroy_all_mutex(data, forks);
 	return (0);
 }
 

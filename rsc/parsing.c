@@ -23,6 +23,7 @@ t_param	*parsing(int argc, char **argv)
 {
 	t_param 		*data;
 
+	data = NULL;
 	if (argc < 5 || !argv)
 		return (NULL);
 	data = malloc(sizeof(t_param));

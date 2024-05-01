@@ -18,9 +18,11 @@ void	clean_plist_and_forks(t_param *data)
 {
 	int	i;
 	t_fork	**forks;
+	t_phlst	**philos;
 
 	i = 0;
 	forks = data->forks;
+	philos = data->plist;
 	while (i < data->n)
 	{
 		free(forks[i]);
@@ -29,7 +31,7 @@ void	clean_plist_and_forks(t_param *data)
 	i = 0;
 	while (i < data->n)
 	{
-		free(data->plist[i]);
+		free(philos[i]);
 		i++;
 	}
 }
@@ -40,10 +42,10 @@ int	exit_phylo(t_param *data, int flag)
 		printf("Invalid parameters\n");
 	if (flag == 1)
 		printf("Program exit\n");
-	if (data ->prog_must_die == 1)
+	if (data && data ->prog_must_die == 1)
 		printf("Someone is dead\n");
-	// if (flag != 2)
-	// 	clean_plist_and_forks(data);
+	if (flag != 2)
+		clean_plist_and_forks(data);
 	if (data != NULL)
 		free(data);
 	return (1);
