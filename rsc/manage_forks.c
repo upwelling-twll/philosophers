@@ -9,42 +9,37 @@
 /*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../phylosopher.h"
 
-static int	check_odd_even(t_phlst *ph, t_param *sd, pthread_mutex_t sd_mutex)
+int	min_frk_lst_usr(t_phlst *one_philo)
 {
-	if (ph->turns != 0)
-	{
-		if (someone_is_dead(sd, sd_mutex))
-			return (1);
-		pthread_mutex_lock(&sd->mutex_printf);
-		print_action(ph->index, 7, sd); //thinking
-		pthread_mutex_unlock(&sd->mutex_printf);
-		usleep(50);
-	}
-	if (ph->index % 2 == 0)
-	{
-		//usleep(2500);
-		if (my_usleep(2500, sd))
-			return (1);
-	}
-	return (0);
+	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
+		return (one_philo->left_fork->last_user);
+	else
+		return (one_philo->right_fork->last_user);
 }
 
-int	philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex)
+int	max_frk_lst_usr(t_phlst *one_philo)
 {
-	if (check_odd_even(p, sd, sd_mutex))
-		return (1);
-	if (taking_forks(p, sd, sd_mutex))
-		return (1);
-	if (eating_routine(p, sd))
-		return (1);
-	finish_eating_turn(p);
-	if (someone_is_dead(sd, sd_mutex))
-		return (1);
-	if (sleeping_routine(p, sd))
-		return (1);
-	if (someone_is_dead(sd, sd_mutex))
-		return (1);
-	return (0);
+	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
+		return (one_philo->left_fork->last_user);
+	else
+		return (one_philo->right_fork->last_user);
+}
+
+pthread_mutex_t	*min_fork(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
+		return (&one_philo->left_fork->fork_mutex);
+	else
+		return (&one_philo->right_fork->fork_mutex);
+}
+
+pthread_mutex_t	*max_fork(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
+		return (&one_philo->left_fork->fork_mutex);
+	else
+		return (&one_philo->right_fork->fork_mutex);
 }

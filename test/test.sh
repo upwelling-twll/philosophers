@@ -20,8 +20,8 @@ process_line() {
         echo "Error: Line '$line' does not contain enough arguments"
         return 1
     fi
-    # Call phylosopher with the arguments
-    output=$(.././phylosopher "${args[@]}")
+    # Call philosopher with the arguments
+    output=$(.././philosopher "${args[@]}")
     # echo "Output for line '$line': '$output'"
     if  grep -q "died" <<< "$output"  && [[ $file == *"test_input_not_die.txt"* ]]; then
         echo "$output" > "./test_logs/not_die/${line}.txt"
@@ -46,6 +46,3 @@ for file in ../test/test_input/*; do
         done < "$file"
         fi
 done
-
-
-
