@@ -10,19 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phylosopher.h"
+#include "../phylosopher.h"
 
-int	main(int argc, char *argv[])
+void	init_data(t_phlst **plist, t_param *data, t_fork **forks)
 {
-	t_param	*data;
-	t_fork	*forks[200];
+	struct timeval	start;
 
-	data = parsing(argc, argv);
-	if (data == NULL)
-		return (exit_phylo(data, 2));
-	gettimeofday(&(data->prog_start), NULL);
-	phylosophers_act(data, forks);
-	exit_phylo(data, 1);
-	printf("the end ~para-pa-para pa!\n");
-	return (0);
+	init_plist_and_forks(plist, data->n, forks);
+	data->plist = plist;
+	data->forks = forks;
+	pthread_mutex_init(&data->mutex_printf, NULL);
+	pthread_mutex_init(&data->param_mutex, NULL);
+	data->prog_must_die = 0;
+	gettimeofday(&start, NULL);
+	data->prog_start = start;
 }

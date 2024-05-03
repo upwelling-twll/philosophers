@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
+/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../phylosopher.h"
 
 int	incorrect_data(t_param *data)
@@ -19,18 +31,23 @@ int	incorrect_data(t_param *data)
 	return (0);
 }
 
+void	proc_first_four_args(t_param *data, char **argv)
+{
+	data->n = atoi(argv[1]);
+	data->time_to_eat = atoi(argv[3]) * 1000;
+	data->time_to_die = atoi(argv[2]) * 1000;
+	data->time_to_sleep = atoi(argv[4]) * 1000;
+}
+
 t_param	*parsing(int argc, char **argv)
 {
-	t_param 		*data;
+	t_param	*data;
 
 	data = NULL;
 	if (argc < 5 || !argv)
 		return (NULL);
 	data = malloc(sizeof(t_param));
-	data->n = atoi(argv[1]);
-	data->time_to_eat = atoi(argv[3]) * 1000; //one hundred thousand microseconds
-	data->time_to_die = atoi(argv[2]) * 1000;
-	data->time_to_sleep = atoi(argv[4]) * 1000;
+	proc_first_four_args(data, argv);
 	if (argv[5])
 	{
 		if (atoi(argv[5]) == 0)
@@ -44,8 +61,8 @@ t_param	*parsing(int argc, char **argv)
 		data->turns_to_eat = 0;
 	if (incorrect_data(data))
 	{
-			free(data);
-			return (NULL);
+		free(data);
+		return (NULL);
 	}
 	return (data);
 }

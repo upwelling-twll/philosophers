@@ -51,30 +51,53 @@ typedef struct s_param
 
 
 void	join_all_threads(t_param *data, int n);
+//routine_philo.c
+void	*philo(void *one_philo);
 
 //usleep.c
-int	my_usleep(long long period, t_param *data);
+int		my_usleep(long long period, t_param *data);
 
 //exit.c
+void	join_all_threads(t_param *data, int n);
 void	destroy_all_mutex(t_param *data, t_fork **forks);
 int		exit_phylo(t_param *data, int flag);
 
-//monitoring.c
+//define_dead_philo.c
+int		is_dead_signal(t_param *data, t_phlst *philo);
+int		someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex);
 int		is_dead(t_param *data, t_phlst *philo);
+
+//monitoring.c
+int		everyone_ate_turns(int turns_to_eat, t_phlst **philos, int n);
 int		monitore_endlessly(t_param *data);
 int		monitore_while_turns(t_param *data);
+int		monitore(t_param *data);
+
+//sleeping_routin.c
+int		sleeping_routine(t_phlst *philo, t_param *shared_data);
+
+//eating_routin.c
+void	finish_eating_turn(t_phlst *philo);
+int		eating_routine(t_phlst *philo, t_param *shared_data);
+int		taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex);
 
 //algorithm.c
-void	*print_action(int n, int action, t_param *data);
-int		phylosophers_act(t_param *data, t_fork **forks);
+pthread_mutex_t	*min_fork(t_phlst *one_philo);
+pthread_mutex_t	*max_fork(t_phlst *one_philo);
+int				max_frk_lst_usr(t_phlst *one_philo);
+int				min_frk_lst_usr(t_phlst *one_philo);
+void			*print_action(int n, int action, t_param *data);
+int				phylosophers_act(t_param *data, t_fork **forks);
 
 //parsing.c
 t_param	*parsing(int argc, char **argv);
 
+
+//init_data.c
+void	init_data(t_phlst **plist, t_param *data, t_fork **forks);
+
 //list_operations.c
 t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks);
-
-
 
 //dbg.c
 void	print_data_list(t_param *data);

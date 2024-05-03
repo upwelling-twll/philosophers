@@ -6,7 +6,9 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
 RM = rm -f
 
-SRCS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
+SRCS = ./rsc/init_data.c ./rsc/eating_routine.c ./rsc/print_data.c ./rsc/routine_philo.c \
+		./rsc/routine_philo.c ./rsc/sleeping_routine.c \
+		./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
 		./rsc/usleep.c ./rsc/monitoring.c ./main.c ./dbg/dbg_structures.c
 
 SRCS_BONUS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\

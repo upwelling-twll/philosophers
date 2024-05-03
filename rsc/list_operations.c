@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
+/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../phylosopher.h"
 
 void	init_forks(t_fork **forks, int n)
@@ -5,7 +17,7 @@ void	init_forks(t_fork **forks, int n)
 	int	i;
 
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		forks[i] = (t_fork *)malloc(sizeof(t_fork));
 		forks[i]->fork = i + 1;
@@ -21,7 +33,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 
 	i = 0;
 	init_forks(forks, n);
-	while(i < n)
+	while (i < n)
 	{
 		plist[i] = (t_phlst *)malloc(sizeof(t_phlst));
 		plist[i]->index = i + 1;
@@ -31,13 +43,13 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 		pthread_mutex_init(&plist[i]->philo_mutex, NULL);
 		if (i != n - 1)
 		{
-			plist[i] -> left_fork = forks[i];
-			plist[i] -> right_fork = forks[i + 1];
+			plist[i]->left_fork = forks[i];
+			plist[i]->right_fork = forks[i + 1];
 		}
 		else
 		{
-			plist[i] -> left_fork = forks[i];
-			plist[i] -> right_fork = forks[0];
+			plist[i]->left_fork = forks[i];
+			plist[i]->right_fork = forks[0];
 		}
 		i++;
 	}

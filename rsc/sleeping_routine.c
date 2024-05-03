@@ -9,20 +9,15 @@
 /*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../phylosopher.h"
 
-#include "phylosopher.h"
-
-int	main(int argc, char *argv[])
+int	sleeping_routine(t_phlst *philo, t_param *shared_data)
 {
-	t_param	*data;
-	t_fork	*forks[200];
-
-	data = parsing(argc, argv);
-	if (data == NULL)
-		return (exit_phylo(data, 2));
-	gettimeofday(&(data->prog_start), NULL);
-	phylosophers_act(data, forks);
-	exit_phylo(data, 1);
-	printf("the end ~para-pa-para pa!\n");
+	pthread_mutex_lock(&shared_data->mutex_printf);
+	print_action(philo->index, 2, shared_data); //sleeping
+	pthread_mutex_unlock(&shared_data->mutex_printf);
+		//usleep(shared_data->time_to_sleep);
+	if (my_usleep(shared_data->time_to_sleep, shared_data))
+		return (1);
 	return (0);
 }

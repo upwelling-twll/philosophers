@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
+/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../phylosopher.h"
 
 long long	timestamp(void)
@@ -5,13 +17,15 @@ long long	timestamp(void)
 	struct timeval	timestrc;
 
 	gettimeofday(&timestrc, NULL);
-	return((timestrc.tv_sec * 1000) + (timestrc.tv_usec / 1000)* 1000);
+	return ((timestrc.tv_sec * 1000) + (timestrc.tv_usec / 1000) * 1000);
 }
 
 long long	time_diff(long long past, long long present)
 {
-	// printf("DIFF=%lli\n", present - past);
-	return(present - past);
+	/*
+	printf("PRES=%lli, PAST=%lli, DIFF=%lli\n",present, past, present - past);
+	*/
+	return (present - past);
 }
 
 int	prog_end(t_param *data)
@@ -26,32 +40,20 @@ int	prog_end(t_param *data)
 	return (0);
 }
 
-int		my_usleep(long long time, t_param *data)
+int	my_usleep(long long time, t_param *data)
 {
-	long long start;
+	long long	start;
 
+	time /= 1000;
 	start = timestamp();
 	while (!(prog_end(data)))
 	{
-		// printf("goal: %lli\n", time);
+		/*
+		printf("goal: %lli\n", time);
+		*/
 		if (time_diff(start, timestamp()) >= time)
 			return (0);
 		usleep(50);
 	}
 	return (1);
 }
-
-// void	my_usleep(int	period)
-// {
-// 	struct timeval	start;
-// 	struct timeval	curr;
-// 	size_t			time_passed;
-
-// 	gettimeofday(&start, NULL);
-// 	gettimeofday(&curr, NULL);
-// 	while((curr.tv_sec * 1000000 + curr.tv_usec) - period < (start.tv_sec * 1000000 + start.tv_usec))
-// 	{
-// 		usleep(100);
-// 		gettimeofday(&curr, NULL);
-// 	}
-// }

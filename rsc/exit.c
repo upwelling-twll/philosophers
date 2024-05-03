@@ -1,4 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
+/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../phylosopher.h"
+
+void	join_all_threads(t_param *data, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		pthread_join(data->plist[i]->thread, NULL);
+		i++;
+	}
+}
 
 void	destroy_all_mutex(t_param *data, t_fork **forks)
 {
@@ -7,7 +31,7 @@ void	destroy_all_mutex(t_param *data, t_fork **forks)
 	i = 0;
 	pthread_mutex_destroy(&(data->param_mutex));
 	pthread_mutex_destroy(&(data->mutex_printf));
-	while(i < data->n)
+	while (i < data->n)
 	{
 		pthread_mutex_destroy(&(forks[i]->fork_mutex));
 		i++;
@@ -16,7 +40,7 @@ void	destroy_all_mutex(t_param *data, t_fork **forks)
 
 void	clean_plist_and_forks(t_param *data)
 {
-	int	i;
+	int		i;
 	t_fork	**forks;
 	t_phlst	**philos;
 
