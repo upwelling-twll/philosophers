@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   usleep.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/06/29 18:22:36 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ long long	timestamp(void)
 
 long long	time_diff(long long past, long long present)
 {
-	/*
-	printf("PRES=%lli, PAST=%lli, DIFF=%lli\n",present, past, present - past);
-	*/
+	
+	// printf("PRES=%lli, PAST=%lli, DIFF=%lli\n",present, past, present - past);
+	
 	return (present - past);
 }
 
@@ -44,16 +44,26 @@ int	my_usleep(long long time, t_param *data)
 {
 	long long	start;
 
-	time /= 1000;
+	// printf("usleep time target: %lli\n", time);
+	// // time /= 1000;
+	// printf("usleep time target 2: %lli\n", time);
 	start = timestamp();
+	int i = 0;
 	while (!(prog_end(data)))
 	{
 		/*
 		printf("goal: %lli\n", time);
 		*/
 		if (time_diff(start, timestamp()) >= time)
+		{
+			pthread_mutex_lock(&data->mutex_printf);
+			printf("i = %i, time diff = %lli, time to comp with = %lli\n", i, time_diff(start, timestamp()), time);
+			pthread_mutex_unlock(&data->mutex_printf);
 			return (0);
+		}
+		i++;
 		usleep(50);
 	}
+	// printf("waited for %lli ms\n", time);
 	return (1);
 }

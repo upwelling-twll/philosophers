@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   eating_routine.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/06/29 18:19:10 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	finish_eating_turn(t_phlst *philo)
 {
 	philo->left_fork->last_user = philo->index;
 	philo->right_fork->last_user = philo->index;
+	//printf("wonna free the forks\n");
 	pthread_mutex_unlock(min_fork(philo));
 	pthread_mutex_unlock(max_fork(philo));
+	//printf("forks are free\n");
 }
 
 int	eating_routine(t_phlst *philo, t_param *shared_data)
@@ -31,18 +33,42 @@ int	eating_routine(t_phlst *philo, t_param *shared_data)
 	print_action(philo->index, 1, shared_data); //eating
 	pthread_mutex_unlock(&shared_data->mutex_printf);
 	gettimeofday(&cur_time, NULL);
+		pthread_mutex_lock(&shared_data->mutex_printf);
+		printf("said i am eating N=%i \n", philo->index); //took_left_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
 	pthread_mutex_lock(&(philo->philo_mutex));
 	philo->lst_eating_time = cur_time;
 	pthread_mutex_unlock(&(philo->philo_mutex));
 	pthread_mutex_lock(&(philo->philo_mutex));
 	philo->turns ++;
 	pthread_mutex_unlock(&(philo->philo_mutex));
+		pthread_mutex_lock(&shared_data->mutex_printf);
+		printf("updated time and turns N=%i \n", philo->index); //took_left_fork
+		pthread_mutex_unlock(&shared_data->mutex_printf);
 	if (my_usleep(shared_data->time_to_eat, shared_data)) //usleep(shared_data->time_to_eat);
 	{
+			pthread_mutex_lock(&shared_data->mutex_printf);
+			printf("ended usleep N=%i \n", philo->index); //took_left_fork
+			pthread_mutex_unlock(&shared_data->mutex_printf);
 		pthread_mutex_unlock(min_fork(philo));
 		pthread_mutex_unlock(max_fork(philo));
+			pthread_mutex_lock(&shared_data->mutex_printf);
+			printf("my usleep ends bad - philo N=%i\n", philo->index);
+			pthread_mutex_unlock(&shared_data->mutex_printf);
 		return (1);
 	}
+	
+	// struct timeval	time_now;
+	// gettimeofday(&time_now, NULL);
+	//  printf("after eating - %li\n", ((time_now.tv_sec * 1000000 + time_now.tv_usec)));
+
+	pthread_mutex_lock(&shared_data->mutex_printf);
+	printf("left usleep condition N=%i \n", philo->index); //took_left_fork
+	pthread_mutex_unlock(&shared_data->mutex_printf);
+
+	pthread_mutex_unlock(min_fork(philo));
+	pthread_mutex_unlock(max_fork(philo));
+	
 	pthread_mutex_lock(&(philo->philo_mutex));
 	philo->is_eating = 0;
 	pthread_mutex_unlock(&(philo->philo_mutex));

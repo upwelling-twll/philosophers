@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   print_data.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:06:09 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,28 @@ void	print_time(t_param *data)
 
 	gettimeofday(&time_now, NULL);
 	printf("%li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)
-			- (data->prog_start.tv_sec * 1000000 
-				+ data->prog_start.tv_usec)) / 1000);
+			- (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec)) / 1000);
+	// printf("time now:%li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)));
+	// printf("%li, other calc=%li : ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)
+	// 		- (data->prog_start.tv_sec * 1000000 
+	// 			+ data->prog_start.tv_usec)) / 1000, (time_now.tv_sec * 1000000 + time_now.tv_usec)- (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec));
 }
 
 void	*print_action(int n, int action, t_param *data)
 {
+	struct timeval	time_now;
+
+	gettimeofday(&time_now, NULL);
+	
 	print_time(data);
 	printf("%i ", n);
 	if (action == 1)
 		printf("is eating\n");
 	if (action == 2)
+	{
+		// printf(" pr_act - %li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)));
 		printf("is sleeping\n");
+	}
 	if (action == 3)
 		printf("is dead\n");
 	if (action == 4 || action == 5)
