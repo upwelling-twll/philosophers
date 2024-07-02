@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/02 16:35:24 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/02 17:21:29 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,26 @@ int	my_usleep(long long time, t_param *data, int iph)
 			// pthread_mutex_unlock(&data->mutex_printf);
 			diff = time_diff(start, timestamp());
 			t++;
-			if (t == 1000 || t == 500 || t == 1000 || t == 2000 || t == 3000 || (t > 1000 && t%300 == 0))
-			{
-				pthread_mutex_lock(&data->mutex_printf);
-				printf("Nph=%i usleep did %lli turns, crr diff=%lli\n",iph, t, diff);
-				pthread_mutex_unlock(&data->mutex_printf);
-			}
+			// if (t == 1000 || t == 500 || t == 1000 || t == 2000 || t == 3000 || (t > 1000 && t%300 == 0))
+			// {
+			// 	pthread_mutex_lock(&data->mutex_printf);
+			// 	printf("Nph=%i usleep did %lli turns, crr diff=%lli\n",iph, t, diff);
+			// 	pthread_mutex_unlock(&data->mutex_printf);
+			// }
 		if (diff >= time)
 		{
-			pthread_mutex_lock(&data->mutex_printf);
-			print_action(iph, 15, data); // usleep time target achived
-			printf("Nph=%i, i = %i, time diff = %lli, time to comp with = %lli\n", iph, i, time_diff(start, timestamp()), time);
-			pthread_mutex_unlock(&data->mutex_printf);
+			// pthread_mutex_lock(&data->mutex_printf);
+			// print_action(iph, 15, data); // usleep time target achived
+			// printf("Nph=%i, i = %i, time diff = %lli, time to comp with = %lli\n", iph, i, time_diff(start, timestamp()), time);
+			// pthread_mutex_unlock(&data->mutex_printf);
 			return (0);
 		}
 		i++;
 		usleep(50);
 	}
-	pthread_mutex_lock(&data->mutex_printf);
-	printf("Nph=%i usleep did %lli turns and ended with number=%lli\n",iph, t, diff);
-	pthread_mutex_unlock(&data->mutex_printf);
-	printf("waited for %lli ms\n", time);
+	// pthread_mutex_lock(&data->mutex_printf);
+	// printf("Nph=%i usleep did %lli turns and ended with number=%lli\n",iph, t, diff);
+	// pthread_mutex_unlock(&data->mutex_printf);
+	//printf("waited for %lli ms\n", time);
 	return (1);
 }

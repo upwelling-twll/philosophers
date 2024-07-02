@@ -89,8 +89,8 @@ int		taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex);
 
 //algorithm.c
 void			*print_action(int n, int action, t_param *data);
-int				phylosophers_act(t_param *data, t_fork **forks);
-void			*philo_act(void *one_philo);
+int				create_threads(t_param *data, t_fork **forks);
+void			*thread_start(void *one_philo);
 
 //parsing.c
 t_param	*parsing(int argc, char **argv);

@@ -6,13 +6,13 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/06/29 16:25:33 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/02 18:03:48 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../phylosopher.h"
 
-void	*philo_act(void *one_philo)
+void	*thread_start(void *one_philo)
 {
 	int					l;
 	int					k;
@@ -34,13 +34,18 @@ void	*philo_act(void *one_philo)
 	while (l < turns)
 	{
 		if (philo_routine(ph, *(ph->param), (*(ph->param))->param_mutex))
+		{
+			pthread_mutex_lock(&(*(ph->param))->mutex_printf);
+			printf("Nph=%i philo_routine returned 1\n", ph->index);
+			pthread_mutex_unlock(&(*(ph->param))->mutex_printf);
 			return (NULL);
+		}
 		l = l + k;
 	}
 	return (one_philo);
 }
 
-int	phylosophers_act(t_param *data, t_fork **forks)
+int	create_threads(t_param *data, t_fork **forks)
 {
 	int				i;
 	t_phlst			*philo[200];
@@ -51,7 +56,7 @@ int	phylosophers_act(t_param *data, t_fork **forks)
 	{
 		data->plist[i]->param = &data;
 		data->plist[i]->lst_eating_time = data->prog_start;
-		pthread_create(&data->plist[i]->thread, NULL, philo_act, 
+		pthread_create(&data->plist[i]->thread, NULL, thread_start, 
 			(void *)(data->plist[i]));
 		i++;
 	}

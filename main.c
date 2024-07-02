@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/06/28 17:56:17 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/02 17:46:40 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 		return (exit_phylo(data, 2));
 	gettimeofday(&(data->prog_start), NULL);
 	printf("%li\n", (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec));
-	phylosophers_act(data, forks);
+	create_threads(data, forks);
 	exit_phylo(data, 1);
 	printf("the end ~para-pa-para pa!\n");
 	return (0);

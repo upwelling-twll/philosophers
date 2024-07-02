@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/02 15:50:56 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/02 18:32:05 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	finish_eating_turn(t_phlst *philo)
 	//printf("wonna free the forks\n");
 	pthread_mutex_unlock(min_fork(philo));
 	pthread_mutex_unlock(max_fork(philo));
-	//printf("forks are free\n");
+	pthread_mutex_lock(&(*(philo->param))->mutex_printf);
+	printf("Nph=%i my forks are free\n", philo->index);
+	pthread_mutex_unlock(&(*(philo->param))->mutex_printf);
 }
 
 int	eating_routine(t_phlst *philo, t_param *shared_data)
@@ -66,8 +68,8 @@ int	eating_routine(t_phlst *philo, t_param *shared_data)
 	// printf("left usleep condition N=%i \n", philo->index); //took_left_fork
 	// pthread_mutex_unlock(&shared_data->mutex_printf);
 
-	pthread_mutex_unlock(min_fork(philo));
-	pthread_mutex_unlock(max_fork(philo));
+	// pthread_mutex_unlock(min_fork(philo));
+	// pthread_mutex_unlock(max_fork(philo));
 	
 	pthread_mutex_lock(&(philo->philo_mutex));
 	philo->is_eating = 0;
