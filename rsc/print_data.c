@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/06/29 16:06:09 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/02 15:42:18 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	print_time(t_param *data)
 	struct timeval	time_now;
 
 	gettimeofday(&time_now, NULL);
-	printf("%li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)
-			- (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec)) / 1000);
+	printf("%li ", ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
+			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000)));
 	// printf("time now:%li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)));
 	// printf("%li, other calc=%li : ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)
 	// 		- (data->prog_start.tv_sec * 1000000 
@@ -56,5 +56,11 @@ void	*print_action(int n, int action, t_param *data)
 		printf("is no more using max fork\n");
 	if (action == 12)
 		printf("done thinking\n");
+	if (action == 13)
+		printf("ended usleep as smn is dead\n");
+	if (action == 14)
+		printf("usleep is going to start");
+	if (action == 15)
+		printf("usleep time target achived:");
 	return (NULL);
 }

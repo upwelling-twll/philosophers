@@ -3,7 +3,7 @@ NAME = philosopher
 NAME_BONUS = philosopher_bonus
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
+FLAGS = #-Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
 RM = rm -f
 
 SRCS = ./rsc/init_data.c ./rsc/eating_routine.c ./rsc/print_data.c ./rsc/routine_philo.c \

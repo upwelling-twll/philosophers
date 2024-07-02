@@ -55,7 +55,7 @@ int		philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex);
 
 
 //usleep.c
-int		my_usleep(long long period, t_param *data);
+int		my_usleep(long long period, t_param *data, int iph);
 
 //exit.c
 void	join_all_threads(t_param *data, int n);
