@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/02 18:03:48 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:32:19 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	*thread_start(void *one_philo)
 	{
 		if (philo_routine(ph, *(ph->param), (*(ph->param))->param_mutex))
 		{
-			pthread_mutex_lock(&(*(ph->param))->mutex_printf);
-			printf("Nph=%i philo_routine returned 1\n", ph->index);
-			pthread_mutex_unlock(&(*(ph->param))->mutex_printf);
+			// pthread_mutex_lock(&(*(ph->param))->mutex_printf);
+			// printf("Nph=%i philo_routine returned 1\n", ph->index);
+			// pthread_mutex_unlock(&(*(ph->param))->mutex_printf);
 			return (NULL);
 		}
 		l = l + k;

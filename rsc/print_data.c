@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/02 15:42:18 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:00:02 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,11 @@ void	*print_action(int n, int action, t_param *data)
 		printf("usleep is going to start");
 	if (action == 15)
 		printf("usleep time target achived:");
+	if (action == 16)
+		printf("ready to check forks\n");
+	if (action == 17)
+		printf("will check odd even\n");
+	if (action == 18)
+		printf("unlocked my forks\n");
 	return (NULL);
 }

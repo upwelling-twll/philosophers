@@ -83,7 +83,7 @@ int		monitore(t_param *data);
 int		sleeping_routine(t_phlst *philo, t_param *shared_data);
 
 //eating_routin.c
-void	finish_eating_turn(t_phlst *philo);
+// void	finish_eating_turn(t_phlst *philo);
 int		eating_routine(t_phlst *philo, t_param *shared_data);
 int		taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex);
 
@@ -103,5 +103,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks);
 
 //dbg.c
 void	print_data_list(t_param *data);
+int		min_frk_id(t_phlst *one_philo);
+int		max_frk_id(t_phlst *one_philo);
 
 #endif

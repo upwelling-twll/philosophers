@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   dbg_structures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/04 14:19:00 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,20 @@ void	print_data_list(t_param *data)
 		print_philo_struct(data->plist[i]);
 		i++;
 	}
+}
+
+int	min_frk_id(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
+		return (one_philo->left_fork->fork);
+	else
+		return (one_philo->right_fork->fork);
+}
+
+int	max_frk_id(t_phlst *one_philo)
+{
+	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
+		return (one_philo->left_fork->fork);
+	else
+		return (one_philo->right_fork->fork);
 }

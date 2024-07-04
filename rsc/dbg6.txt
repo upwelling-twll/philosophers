@@ -1,0 +1,573 @@
+36400 5 has taken a fork
+36400 9 has taken a fork
+36400 9 is eating
+36400 7 is thinking
+        Ph num=7: did usleep w. f. m.f = 0
+        Ph num=7: will take first fork
+36400 10 is sleeping
+36400 4 unlocked my forks
+36400 3 is thinking
+36400 2 unlocked my forks
+36400 2 is sleeping
+36400 8 unlocked my forks
+36400 8 is sleeping
+36400 1 has taken a fork
+36400 7 has taken a fork
+36400 4 is sleeping
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+36400 6 unlocked my forks
+36400 1 is eating
+36400 7 has taken a fork
+36400 5 has taken a fork
+36400 5 is eating
+36400 6 is sleeping
+36400 7 is eating
+36400 3 has taken a fork
+36400 3 has taken a fork
+36400 3 is eating
+36600 10 is thinking
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+36600 5 unlocked my forks
+36600 5 is sleeping
+36600 8 is thinking
+        Ph num=8: did usleep w. f. m.f = 0
+        Ph num=8: will take first fork
+36600 4 is thinking
+        Ph num=4: did usleep w. f. m.f = 0
+        Ph num=4: will take first fork
+36600 4 has taken a fork
+36600 4 has taken a fork
+36600 9 unlocked my forks
+36600 2 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+36600 8 has taken a fork
+36600 8 has taken a fork
+36600 8 is eating
+36600 7 unlocked my forks
+36600 10 has taken a fork
+36600 4 is eating
+36600 9 is sleeping
+        Ph num=2: will take first fork
+36600 2 has taken a fork
+36600 1 unlocked my forks
+36600 6 is thinking
+36600 7 is sleeping
+36600 10 has taken a fork
+36600 10 is eating
+36600 2 has taken a fork
+36600 1 is sleeping
+        Ph num=6: did usleep w. f. m.f = 0
+36600 3 unlocked my forks
+36600 2 is eating
+36600 3 is sleeping
+        Ph num=6: will take first fork
+36600 6 has taken a fork
+36600 6 has taken a fork
+36600 6 is eating
+36800 1 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+36800 1 has taken a fork
+36800 6 unlocked my forks
+36800 6 is sleeping
+36800 8 unlocked my forks
+36800 8 is sleeping
+36800 3 is thinking
+        Ph num=3: did usleep w. f. m.f = 0
+36800 5 is thinking
+36800 7 is thinking
+        Ph num=7: did usleep w. f. m.f = 0
+        Ph num=7: will take first fork
+36800 4 unlocked my forks
+36800 9 is thinking
+        Ph num=9: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=5: will take first fork
+36800 5 has taken a fork
+36800 7 has taken a fork
+36800 4 is sleeping
+36800 10 unlocked my forks
+        Ph num=9: will take first fork
+36800 9 has taken a fork
+36800 9 has taken a fork
+36800 1 has taken a fork
+36800 5 has taken a fork
+36800 7 has taken a fork
+36800 7 is eating
+36800 2 unlocked my forks
+36800 2 is sleeping
+36800 9 is eating
+36800 5 is eating
+36800 10 is sleeping
+36800 3 has taken a fork
+36800 3 has taken a fork
+36800 3 is eating
+36800 1 is eating
+37000 5 unlocked my forks
+37000 5 is sleeping
+37000 10 is thinking
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+37000 6 is thinking
+        Ph num=6: did usleep w. f. m.f = 0
+        Ph num=6: will take first fork
+37000 8 is thinking
+37000 4 is thinking
+        Ph num=4: did usleep w. f. m.f = 0
+        Ph num=4: will take first fork
+37000 4 has taken a fork
+37000 10 has taken a fork
+37000 1 unlocked my forks
+37000 9 unlocked my forks
+37000 6 has taken a fork
+        Ph num=8: did usleep w. f. m.f = 0
+37000 7 unlocked my forks
+37000 7 is sleeping
+37000 4 has taken a fork
+37000 4 is eating
+37000 10 has taken a fork
+37000 1 is sleeping
+37000 9 is sleeping
+        Ph num=8: will take first fork
+37000 8 has taken a fork
+37000 3 unlocked my forks
+37000 2 is thinking
+37000 10 is eating
+37000 6 has taken a fork
+37000 8 has taken a fork
+37000 8 is eating
+        Ph num=2: did usleep w. f. m.f = 0
+        Ph num=2: will take first fork
+37000 2 has taken a fork
+37000 6 is eating
+37000 3 is sleeping
+37000 2 has taken a fork
+37000 2 is eating
+37200 10 unlocked my forks
+37200 10 is sleeping
+37200 7 is thinking
+        Ph num=7: did usleep w. f. m.f = 0
+37200 3 is thinking
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+37200 3 has taken a fork
+37200 8 unlocked my forks
+37200 8 is sleeping
+37200 4 unlocked my forks
+37200 4 is sleeping
+        Ph num=7: will take first fork
+37200 7 has taken a fork
+37200 7 has taken a fork
+37200 6 unlocked my forks
+37200 3 has taken a fork
+37200 1 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+37200 2 unlocked my forks
+37200 2 is sleeping
+37200 7 is eating
+37200 6 is sleeping
+37200 3 is eating
+37200 9 is thinking
+        Ph num=9: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+37200 5 is thinking
+        Ph num=9: will take first fork
+37200 9 has taken a fork
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=5: will take first fork
+37200 9 has taken a fork
+37200 1 has taken a fork
+37200 1 has taken a fork
+37200 9 is eating
+37200 5 has taken a fork
+37200 5 has taken a fork
+37200 5 is eating
+37200 1 is eating
+37400 4 is thinking
+        Ph num=4: did usleep w. f. m.f = 0
+        Ph num=4: will take first fork
+37400 7 unlocked my forks
+37400 7 is sleeping
+37400 1 unlocked my forks
+37400 1 is sleeping
+37400 2 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+37400 6 is thinking
+37400 5 unlocked my forks
+37400 5 is sleeping
+37400 9 unlocked my forks
+37400 9 is sleeping
+37400 10 is thinking
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+        Ph num=6: did usleep w. f. m.f = 0
+37400 8 is thinking
+        Ph num=8: did usleep w. f. m.f = 0
+        Ph num=8: will take first fork
+37400 8 has taken a fork
+37400 10 has taken a fork
+        Ph num=6: will take first fork
+37400 4 has taken a fork
+37400 3 unlocked my forks
+        Ph num=2: will take first fork
+37400 2 has taken a fork
+37400 10 has taken a fork
+37400 6 has taken a fork
+37400 6 has taken a fork
+37400 3 is sleeping
+37400 2 has taken a fork
+37400 2 is eating
+37400 10 is eating
+37400 4 has taken a fork
+37400 6 is eating
+37400 8 has taken a fork
+37400 8 is eating
+37400 4 is eating
+37600 8 unlocked my forks
+37600 8 is sleeping
+37600 7 is thinking
+37600 5 is thinking
+37600 2 unlocked my forks
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=7: did usleep w. f. m.f = 0
+        Ph num=7: will take first fork
+37600 7 has taken a fork
+37600 10 unlocked my forks
+37600 1 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+37600 1 has taken a fork
+37600 9 is thinking
+        Ph num=9: did usleep w. f. m.f = 0
+37600 3 is thinking
+37600 7 has taken a fork
+37600 10 is sleeping
+37600 2 is sleeping
+37600 6 unlocked my forks
+37600 6 is sleeping
+37600 1 has taken a fork
+37600 4 unlocked my forks
+        Ph num=9: will take first fork
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+37600 3 has taken a fork
+37600 1 is eating
+37600 4 is sleeping
+37600 9 has taken a fork
+37600 7 is eating
+37600 3 has taken a fork
+37600 3 is eating
+37600 9 has taken a fork
+37600 9 is eating
+        Ph num=5: will take first fork
+37600 5 has taken a fork
+37600 5 has taken a fork
+37600 5 is eating
+37800 5 unlocked my forks
+37800 5 is sleeping
+37800 3 unlocked my forks
+37800 3 is sleeping
+37800 10 is thinking
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+37800 8 is thinking
+37800 4 is thinking
+        Ph num=4: did usleep w. f. m.f = 0
+        Ph num=4: will take first fork
+37800 4 has taken a fork
+37800 2 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+        Ph num=2: will take first fork
+        Ph num=8: did usleep w. f. m.f = 0
+37800 6 is thinking
+        Ph num=6: did usleep w. f. m.f = 0
+37800 7 unlocked my forks
+37800 4 has taken a fork
+37800 1 unlocked my forks
+37800 10 has taken a fork
+37800 2 has taken a fork
+        Ph num=8: will take first fork
+37800 9 unlocked my forks
+        Ph num=6: will take first fork
+37800 6 has taken a fork
+37800 6 has taken a fork
+37800 1 is sleeping
+37800 2 has taken a fork
+37800 2 is eating
+37800 8 has taken a fork
+37800 8 has taken a fork
+37800 7 is sleeping
+37800 4 is eating
+37800 10 has taken a fork
+37800 10 is eating
+37800 9 is sleeping
+37800 8 is eating
+37800 6 is eating
+38000 5 is thinking
+38000 9 is thinking
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=5: will take first fork
+38000 3 is thinking
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+38000 3 has taken a fork
+38000 6 unlocked my forks
+38000 6 is sleeping
+38000 10 unlocked my forks
+        Ph num=9: did usleep w. f. m.f = 0
+38000 5 has taken a fork
+38000 8 unlocked my forks
+38000 4 unlocked my forks
+38000 2 unlocked my forks
+38000 1 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+38000 1 has taken a fork
+        Ph num=9: will take first fork
+38000 5 has taken a fork
+38000 8 is sleeping
+38000 4 is sleeping
+38000 2 is sleeping
+38000 3 has taken a fork
+38000 7 is thinking
+38000 10 is sleeping
+38000 1 has taken a fork
+38000 9 has taken a fork
+38000 9 has taken a fork
+38000 9 is eating
+        Ph num=7: did usleep w. f. m.f = 0
+38000 1 is eating
+38000 5 is eating
+38000 3 is eating
+        Ph num=7: will take first fork
+38000 7 has taken a fork
+38000 7 has taken a fork
+38000 7 is eating
+38200 3 unlocked my forks
+38200 3 is sleeping
+38200 6 is thinking
+        Ph num=6: did usleep w. f. m.f = 0
+        Ph num=6: will take first fork
+38200 6 has taken a fork
+38200 8 is thinking
+        Ph num=8: did usleep w. f. m.f = 0
+        Ph num=8: will take first fork
+38200 8 has taken a fork
+38200 1 unlocked my forks
+38200 5 unlocked my forks
+38200 5 is sleeping
+38200 6 has taken a fork
+38200 6 is eating
+38200 2 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+38200 4 is thinking
+38200 8 has taken a fork
+38200 1 is sleeping
+38200 7 unlocked my forks
+38200 7 is sleeping
+38200 10 is thinking
+        Ph num=2: will take first fork
+38200 2 has taken a fork
+38200 2 has taken a fork
+38200 2 is eating
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+38200 8 is eating
+        Ph num=4: did usleep w. f. m.f = 0
+38200 10 has taken a fork
+38200 10 has taken a fork
+38200 10 is eating
+        Ph num=4: will take first fork
+38200 9 unlocked my forks
+38200 9 is sleeping
+38200 4 has taken a fork
+38200 4 has taken a fork
+38200 4 is eating
+38400 1 is thinking
+38400 7 is thinking
+38400 10 unlocked my forks
+38400 10 is sleeping
+38400 5 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+38400 1 has taken a fork
+38400 3 is thinking
+        Ph num=7: did usleep w. f. m.f = 0
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+38400 8 unlocked my forks
+38400 8 is sleeping
+38400 6 unlocked my forks
+38400 6 is sleeping
+38400 4 unlocked my forks
+38400 4 is sleeping
+38400 2 unlocked my forks
+38400 1 has taken a fork
+38400 3 has taken a fork
+38400 3 has taken a fork
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=5: will take first fork
+38400 2 is sleeping
+38400 1 is eating
+38400 3 is eating
+38400 5 has taken a fork
+38400 5 has taken a fork
+        Ph num=7: will take first fork
+38400 7 has taken a fork
+38400 7 has taken a fork
+38400 9 is thinking
+        Ph num=9: did usleep w. f. m.f = 0
+        Ph num=9: will take first fork
+38400 5 is eating
+38400 7 is eating
+38400 9 has taken a fork
+38400 9 has taken a fork
+38400 9 is eating
+38600 2 is thinking
+38600 3 unlocked my forks
+38600 3 is sleeping
+38600 8 is thinking
+38600 10 is thinking
+38600 6 is thinking
+38600 4 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+38600 7 unlocked my forks
+38600 7 is sleeping
+38600 5 unlocked my forks
+38600 5 is sleeping
+        Ph num=8: did usleep w. f. m.f = 0
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+38600 1 unlocked my forks
+        Ph num=2: will take first fork
+        Ph num=6: did usleep w. f. m.f = 0
+        Ph num=6: will take first fork
+38600 9 unlocked my forks
+38600 9 is sleeping
+38600 10 has taken a fork
+38600 10 has taken a fork
+38600 2 has taken a fork
+        Ph num=8: will take first fork
+38600 6 has taken a fork
+38600 6 has taken a fork
+38600 1 is sleeping
+38600 10 is eating
+38600 8 has taken a fork
+38600 8 has taken a fork
+        Ph num=4: did usleep w. f. m.f = 0
+        Ph num=4: will take first fork
+38600 4 has taken a fork
+38600 8 is eating
+38600 6 is eating
+38600 4 has taken a fork
+38600 4 is eating
+38600 2 has taken a fork
+38600 2 is eating
+38800 1 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+38800 10 unlocked my forks
+38800 10 is sleeping
+38800 2 unlocked my forks
+38800 2 is sleeping
+38800 1 has taken a fork
+38800 1 has taken a fork
+38800 3 is thinking
+38800 5 is thinking
+38800 6 unlocked my forks
+38800 8 unlocked my forks
+38800 8 is sleeping
+38800 7 is thinking
+38800 4 unlocked my forks
+38800 1 is eating
+        Ph num=5: did usleep w. f. m.f = 0
+        Ph num=5: will take first fork
+38800 5 has taken a fork
+        Ph num=7: did usleep w. f. m.f = 0
+38800 4 is sleeping
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+38800 3 has taken a fork
+38800 3 has taken a fork
+38800 9 is thinking
+38800 5 has taken a fork
+        Ph num=7: will take first fork
+38800 3 is eating
+38800 5 is eating
+38800 7 has taken a fork
+38800 7 has taken a fork
+        Ph num=9: did usleep w. f. m.f = 0
+        Ph num=9: will take first fork
+38800 9 has taken a fork
+38800 9 has taken a fork
+38800 9 is eating
+38800 7 is eating
+39000 2 is thinking
+        Ph num=2: did usleep w. f. m.f = 0
+        Ph num=2: will take first fork
+39000 7 unlocked my forks
+39000 7 is sleeping
+39000 8 is thinking
+        Ph num=8: did usleep w. f. m.f = 0
+39000 1 unlocked my forks
+39000 5 unlocked my forks
+39000 10 is thinking
+39000 3 unlocked my forks
+39000 2 has taken a fork
+39000 2 has taken a fork
+39000 9 unlocked my forks
+39000 9 is sleeping
+39000 1 is sleeping
+39000 5 is sleeping
+39000 3 is sleeping
+39000 4 is thinking
+        Ph num=4: did usleep w. f. m.f = 0
+39000 2 is eating
+        Ph num=8: will take first fork
+        Ph num=10: did usleep w. f. m.f = 0
+        Ph num=10: will take first fork
+39000 10 has taken a fork
+        Ph num=4: will take first fork
+39000 8 has taken a fork
+39000 10 has taken a fork
+39000 4 has taken a fork
+39000 8 has taken a fork
+39000 8 is eating
+39000 4 has taken a fork
+39000 4 is eating
+39000 10 is eating
+39200 9 is thinking
+        Ph num=9: did usleep w. f. m.f = 0
+        Ph num=9: will take first fork
+39200 1 is thinking
+39200 3 is thinking
+        Ph num=3: did usleep w. f. m.f = 0
+        Ph num=3: will take first fork
+39200 3 has taken a fork
+39200 8 unlocked my forks
+39200 8 is sleeping
+39200 4 unlocked my forks
+39200 4 is sleeping
+39200 2 unlocked my forks
+39200 2 is sleeping
+39200 9 has taken a fork
+39200 9 has taken a fork
+39200 3 has taken a fork
+39200 10 unlocked my forks
+39200 5 is thinking
+        Ph num=1: did usleep w. f. m.f = 0
+        Ph num=1: will take first fork
+39200 1 has taken a fork
+39200 3 is eating
+39200 7 is thinking
+39200 9 is eating
+39200 1 has taken a fork
+39200 1 is eating
+39200 10 is sleeping
+39210 6 died
+39210 3 unlocked my forks
+39210 9 unlocked my forks
+39210 1 unlocked my forks

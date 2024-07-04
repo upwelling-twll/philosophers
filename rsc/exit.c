@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/06/28 14:57:38 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/03 16:49:51 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	exit_phylo(t_param *data, int flag)
 		printf("Invalid parameters\n");
 	if (flag == 1)
 		printf("Program exit\n");
+	if (!data)
+		return (1);
 	if (data && data ->prog_must_die == 1)
 		printf("Someone is dead\n");
 	// if (flag != 2)
