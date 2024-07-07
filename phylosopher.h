@@ -64,7 +64,7 @@ int		exit_phylo(t_param *data, int flag);
 
 //define_dead_philo.c
 int		is_dead_signal(t_param *data, t_phlst *philo);
-int		someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex);
+int		someone_is_dead(int iph, t_param *shared_data, pthread_mutex_t sd_mutex);
 int		is_dead(t_param *data, t_phlst *philo);
 
 //manage_forks.c

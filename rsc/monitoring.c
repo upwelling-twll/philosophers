@@ -67,6 +67,7 @@ int	monitore_endlessly(t_param *data)
 		i = 0;
 		while (i < data->n)
 		{
+			
 			if (is_dead(data, data->plist[i]))
 			{
 				pthread_mutex_lock(&(data->param_mutex));
@@ -79,6 +80,7 @@ int	monitore_endlessly(t_param *data)
 			}
 			i++;
 		}
+		usleep(25);
 	}
 	return (0);
 }

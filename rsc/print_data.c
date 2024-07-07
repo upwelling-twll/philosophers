@@ -17,12 +17,15 @@ void	print_time(t_param *data)
 	struct timeval	time_now;
 
 	gettimeofday(&time_now, NULL);
-	printf("%li ", ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
-			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000)));
-	// printf("time now:%li ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)));
-	// printf("%li, other calc=%li : ", ((time_now.tv_sec * 1000000 + time_now.tv_usec)
-	// 		- (data->prog_start.tv_sec * 1000000 
-	// 			+ data->prog_start.tv_usec)) / 1000, (time_now.tv_sec * 1000000 + time_now.tv_usec)- (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec));
+
+	printf("%li.%li ", ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
+			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000)),
+			((time_now.tv_sec * 1000 * 1000 + time_now.tv_usec)
+			- (data->prog_start.tv_sec * 1000 * 1000 + data->prog_start.tv_usec)) % 1000); 
+
+	// correct outpuc according to sbj
+	// printf("%li ", ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
+	// 		- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000))); 
 }
 
 void	*print_action(int n, int action, t_param *data)
@@ -68,5 +71,9 @@ void	*print_action(int n, int action, t_param *data)
 		printf("will check odd even\n");
 	if (action == 18)
 		printf("unlocked my forks\n");
+	if (action == 19)
+		printf("                      checking smn is dead\n");
+	if (action == 20)
+		printf("last user of fork is me\n");
 	return (NULL);
 }

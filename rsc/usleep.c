@@ -43,6 +43,8 @@ int	prog_end(t_param *data)
 int	my_usleep(long long time, t_param *data, int iph)
 {
 	long long	start;
+	long long	sleep_time;
+
 
 	// printf("usleep time target: %lli\n", time);
 	time /= 1000;
@@ -52,11 +54,13 @@ int	my_usleep(long long time, t_param *data, int iph)
 	long long	diff;
 	long long t;
 	t = 0;
+	sleep_time = 900 * time;
+	usleep(sleep_time);
 			// pthread_mutex_lock(&data->mutex_printf);
 			// print_action(iph, 14, data); //usleep is going to start
 			// printf(" target is %lli\n", time);
 			// pthread_mutex_unlock(&data->mutex_printf);
-	while (!(prog_end(data)))
+	while (!(someone_is_dead(iph, data, data->param_mutex)))
 	{
 		/*
 		printf("goal: %lli\n", time);
@@ -65,7 +69,7 @@ int	my_usleep(long long time, t_param *data, int iph)
 			// print_action(iph, 16, data); //usleep is going to start
 			// pthread_mutex_unlock(&data->mutex_printf);
 			diff = time_diff(start, timestamp());
-			t++;
+			//t++;
 			// if (t == 1000 || t == 500 || t == 1000 || t == 2000 || t == 3000 || (t > 1000 && t%300 == 0))
 			// {
 			// 	pthread_mutex_lock(&data->mutex_printf);
@@ -80,8 +84,8 @@ int	my_usleep(long long time, t_param *data, int iph)
 			// pthread_mutex_unlock(&data->mutex_printf);
 			return (0);
 		}
-		i++;
-		usleep(50);
+		//i++;
+		usleep(100);
 	}
 	// pthread_mutex_lock(&data->mutex_printf);
 	// printf("Nph=%i usleep did %lli turns and ended with number=%lli\n",iph, t, diff);

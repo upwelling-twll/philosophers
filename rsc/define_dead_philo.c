@@ -27,19 +27,26 @@ int	is_dead(t_param *data, t_phlst *philo)
 {
 	size_t			time_after_eating;
 	struct timeval	cur;
+	int				eating;
 
-	if (philo->turns == 0)
-		return (0);
-	gettimeofday(&cur, NULL);
-	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) 
-		* 1000000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
-	pthread_mutex_lock(&(philo->philo_mutex));
-	if (philo->is_eating == 1)
+	eating = 0;
+	pthread_mutex_lock(&philo->philo_mutex);
+	// if (philo->is_eating == 1)
+	// {
+	// 	pthread_mutex_unlock(&philo->philo_mutex);
+	// 	return (0);
+	// }
+	if (philo->turns == 0 || philo->is_eating)
 	{
-		pthread_mutex_unlock(&(philo->philo_mutex));
+		pthread_mutex_unlock(&philo->philo_mutex);
 		return (0);
 	}
-	pthread_mutex_unlock(&(philo->philo_mutex));
+	pthread_mutex_unlock(&philo->philo_mutex);
+	gettimeofday(&cur, NULL);
+	pthread_mutex_lock(&philo->philo_mutex);
+	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) 
+		* 1000000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
+	pthread_mutex_unlock(&philo->philo_mutex);
 	if (time_after_eating > data->time_to_die)
 	{
 		return (is_dead_signal(data, philo));
@@ -47,8 +54,11 @@ int	is_dead(t_param *data, t_phlst *philo)
 	return (0);
 }
 
-int	someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex)
+int	someone_is_dead(int iph, t_param *shared_data, pthread_mutex_t sd_mutex)
 {
+		// pthread_mutex_lock(&shared_data->mutex_printf);
+		// print_action(iph, 19, shared_data); //checking
+		// pthread_mutex_unlock(&shared_data->mutex_printf);
 	pthread_mutex_lock(&sd_mutex);
 	if (shared_data->prog_must_die)
 	{
@@ -56,5 +66,6 @@ int	someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex)
 		return (1);
 	}
 	pthread_mutex_unlock(&sd_mutex);
+
 	return (0);
 }
