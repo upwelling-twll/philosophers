@@ -56,18 +56,18 @@ int	my_usleep(long long time, t_param *data, int iph)
 	t = 0;
 	sleep_time = 900 * time;
 	usleep(sleep_time);
-			// pthread_mutex_lock(&data->mutex_printf);
+		
 			// print_action(iph, 14, data); //usleep is going to start
 			// printf(" target is %lli\n", time);
-			// pthread_mutex_unlock(&data->mutex_printf);
+			
 	while (!(someone_is_dead(iph, data, data->param_mutex)))
 	{
 		/*
 		printf("goal: %lli\n", time);
 		*/
-			// pthread_mutex_lock(&data->mutex_printf);
+		
 			// print_action(iph, 16, data); //usleep is going to start
-			// pthread_mutex_unlock(&data->mutex_printf);
+			
 			diff = time_diff(start, timestamp());
 			//t++;
 			// if (t == 1000 || t == 500 || t == 1000 || t == 2000 || t == 3000 || (t > 1000 && t%300 == 0))
@@ -78,10 +78,10 @@ int	my_usleep(long long time, t_param *data, int iph)
 			// }
 		if (diff >= time)
 		{
-			// pthread_mutex_lock(&data->mutex_printf);
+			
 			// print_action(iph, 15, data); // usleep time target achived
 			// printf("Nph=%i, i = %i, time diff = %lli, time to comp with = %lli\n", iph, i, time_diff(start, timestamp()), time);
-			// pthread_mutex_unlock(&data->mutex_printf);
+			
 			return (0);
 		}
 		//i++;

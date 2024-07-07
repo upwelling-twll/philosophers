@@ -18,14 +18,14 @@ static int	check_odd_even(t_phlst *ph, t_param *sd, pthread_mutex_t sd_mutex)
 	// {
 	// 	if (someone_is_dead(sd, sd_mutex))
 	// 		return (1);
-	// 	pthread_mutex_lock(&sd->mutex_printf);
+
 	// 	print_action(ph->index, 7, sd); //thinking
-	// 	pthread_mutex_unlock(&sd->mutex_printf);
+
 	// 	my_usleep(50, sd, ph->index);
 	// }
-	// pthread_mutex_lock(&sd->mutex_printf);
+
 	// print_action(ph->index, 17, sd); //will check odd even
-	// pthread_mutex_unlock(&sd->mutex_printf);
+
 	if (ph->index % 2 == 0)
 	{
 		//usleep(2500);
@@ -36,17 +36,17 @@ static int	check_odd_even(t_phlst *ph, t_param *sd, pthread_mutex_t sd_mutex)
 		// if (my_usleep(100, sd, ph->index))
 		// 	return (1);
 	}
-	// pthread_mutex_lock(&sd->mutex_printf);
+
 	// print_action(ph->index, 16, sd); //ready to check frks
-	// pthread_mutex_unlock(&sd->mutex_printf);
+	
 	return (0);
 }
 
 int	thinking_routine(t_phlst *p, t_param *sd)
 {
-	pthread_mutex_lock(&sd->mutex_printf);
+	
 	print_action(p->index, 7, sd); //thinking
-	pthread_mutex_unlock(&sd->mutex_printf);
+
 }
 
 int	philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex)
@@ -68,9 +68,9 @@ int	philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex)
 		// pthread_mutex_lock(&sd->mutex_printf);
 		// printf("finished eating, but frks my be lcked - philo N=%i \n", p->index); //took_left_fork
 		// pthread_mutex_unlock(&sd->mutex_printf);
-		// pthread_mutex_lock(&sd->mutex_printf);
+		
 		// print_action(p->index, 18, sd); //unlocked my forks
-		// pthread_mutex_unlock(&sd->mutex_printf);
+	
 	if (someone_is_dead(p->index, sd, sd_mutex))
 		return (1);
 	if (sleeping_routine(p, sd))

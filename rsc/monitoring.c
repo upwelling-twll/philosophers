@@ -43,9 +43,9 @@ int	monitore_while_turns(t_param *data)
 		{
 			if (is_dead(data, data->plist[i]))
 			{
-				pthread_mutex_lock(&(data->param_mutex));
-				data->prog_must_die = 1;
-				pthread_mutex_unlock(&(data->param_mutex));
+				// pthread_mutex_lock(&(data->param_mutex));
+				// data->prog_must_die = 1;
+				// pthread_mutex_unlock(&(data->param_mutex));
 				join_all_threads(data, data->n);
 				//destroy_all_mutex(data, forks);
 				return (1);
@@ -70,9 +70,9 @@ int	monitore_endlessly(t_param *data)
 			
 			if (is_dead(data, data->plist[i]))
 			{
-				pthread_mutex_lock(&(data->param_mutex));
-				data->prog_must_die = 1;
-				pthread_mutex_unlock(&(data->param_mutex));
+				// pthread_mutex_lock(&(data->param_mutex));
+				// data->prog_must_die = 1;
+				// pthread_mutex_unlock(&(data->param_mutex));
 				join_all_threads(data, data->n);
 				//destroy_all_mutex(data, forks);
 				return (1);
@@ -80,7 +80,7 @@ int	monitore_endlessly(t_param *data)
 			}
 			i++;
 		}
-		usleep(25);
+		// usleep(25);
 	}
 	return (0);
 }
