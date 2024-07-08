@@ -27,23 +27,24 @@ int	is_dead(t_param *data, t_phlst *philo)
 {
 	size_t			time_after_eating;
 	struct timeval	cur;
-	int				eating;
+	t_param			*sd;
+	int				zero_dinner;
 
-	eating = 0;
+	zero_dinner = 0;
+	sd = (*philo->param);
 	pthread_mutex_lock(&philo->philo_mutex);
-	// if (philo->is_eating == 1)
-	// {
-	// 	pthread_mutex_unlock(&philo->philo_mutex);
-	// 	return (0);
-	// }
-	if (philo->turns == 0 || philo->is_eating)
+	if (philo->is_eating)
 	{
 		pthread_mutex_unlock(&philo->philo_mutex);
 		return (0);
 	}
 	gettimeofday(&cur, NULL);
-	time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) 
-		* 1000 * 1000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
+	if (philo->turns == 0)
+		time_after_eating =  (cur.tv_sec - sd->prog_start.tv_sec) 
+			* 1000 * 1000 + (cur.tv_usec - sd->prog_start.tv_usec);
+	else
+		time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) 
+			* 1000 * 1000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
 	pthread_mutex_unlock(&philo->philo_mutex);
 	if (time_after_eating > data->time_to_die)
 	{
