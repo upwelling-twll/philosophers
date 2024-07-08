@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 int	min_frk_lst_usr(t_phlst *one_philo)
 {
 	t_fork	*minf;
 	int		lstusr;
-	
+
 	if (one_philo->left_fork->fork < one_philo->right_fork->fork)
 		minf = one_philo->left_fork;
 	else
@@ -31,7 +31,7 @@ int	max_frk_lst_usr(t_phlst *one_philo)
 {
 	t_fork	*maxf;
 	int		lstusr;
-	
+
 	if (one_philo->left_fork->fork > one_philo->right_fork->fork)
 		maxf = one_philo->left_fork;
 	else

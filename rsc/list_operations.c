@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 void	init_forks(t_fork **forks, int n)
 {

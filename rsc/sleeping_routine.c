@@ -10,15 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 int	sleeping_routine(t_phlst *philo, t_param *shared_data)
 {
-	
-	print_action(philo->index, 2, shared_data); //sleeping
-
-		//usleep(shared_data->time_to_sleep);
-	if (my_usleep(shared_data->time_to_sleep, shared_data, philo->index))
+	print_action(philo->index, 2, shared_data);
+	if (my_usleep(shared_data->time_to_sleep, shared_data))
 		return (1);
 	return (0);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 int	incorrect_data(t_param *data)
 {
@@ -25,8 +25,7 @@ int	incorrect_data(t_param *data)
 	n = data->n;
 	if (!(eat > 0 && die > 0 && sleep > 0 && n > 0 && data->turns_to_eat >= 0))
 		return (1);
-	// printf("n = %i\n", n);
-	if (n > 200 )
+	if (n > 200)
 		return (1);
 	return (0);
 }
@@ -44,7 +43,7 @@ t_param	*parsing(int argc, char **argv)
 	t_param	*data;
 
 	data = NULL;
-	if (argc < 5 || !argv)
+	if (argc < 5 || argc > 6 || !argv)
 		return (NULL);
 	data = malloc(sizeof(t_param));
 	proc_first_four_args(data, argv);

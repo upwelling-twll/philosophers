@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 void	print_philo_struct(t_phlst *plist)
 {

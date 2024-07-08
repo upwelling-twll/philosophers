@@ -10,7 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
+
+/* for millisec.microsec output
+
+	struct timeval  time_now;
+	long time1, time2;
+
+	gettimeofday(&time_now, NULL);
+
+	time1 = ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
+			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000));
+	time2 = ((time_now.tv_sec * 1000 * 1000 + time_now.tv_usec)
+			- (data->prog_start.tv_sec * 1000 * 1000 + data->prog_start.tv_usec)) % 1000;
+	pthread_mutex_lock(&data->mutex_printf);
+	printf("%li.%li %i %s ", time1, time2, n, message); 
+	pthread_mutex_unlock(&data->mutex_printf);
+*/
 
 void	*action_dbg(int action)
 {

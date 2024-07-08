@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 void	join_all_threads(t_param *data, int n)
 {
@@ -51,13 +51,17 @@ void	clean_plist_and_forks(t_param *data)
 	{
 		free(forks[i]);
 		i++;
+		printf("deleting firl\n");
 	}
+	free(forks);
 	i = 0;
 	while (i < data->n)
 	{
 		free(philos[i]);
 		i++;
+		printf("deleting philo\n");
 	}
+	free(philos);
 }
 
 int	exit_phylo(t_param *data, int flag)
@@ -70,9 +74,12 @@ int	exit_phylo(t_param *data, int flag)
 		return (1);
 	if (data && data ->prog_must_die == 1)
 		printf("Someone is dead\n");
-	// if (flag != 2)
-	// 	clean_plist_and_forks(data);
+	if (flag != 2)
+		clean_plist_and_forks(data);
 	if (data != NULL)
+	{
+		
 		free(data);
+	}
 	return (1);
 }

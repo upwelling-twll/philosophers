@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 int	everyone_ate_turns(int turns_to_eat, t_phlst **philos, int n)
 {
@@ -43,13 +43,10 @@ int	monitore_while_turns(t_param *data)
 		{
 			if (is_dead(data, data->plist[i]))
 			{
-				// pthread_mutex_lock(&(data->param_mutex));
-				// data->prog_must_die = 1;
-				// pthread_mutex_unlock(&(data->param_mutex));
 				join_all_threads(data, data->n);
-				//destroy_all_mutex(data, forks);
+				/*destroy_all_mutex(data, forks);*/
 				return (1);
-				//return(exit_phylo(data, 0));
+				/*return(exit_phylo(data, 0));*/
 			}
 			i++;
 		}
@@ -67,20 +64,15 @@ int	monitore_endlessly(t_param *data)
 		i = 0;
 		while (i < data->n)
 		{
-			
 			if (is_dead(data, data->plist[i]))
 			{
-				// pthread_mutex_lock(&(data->param_mutex));
-				// data->prog_must_die = 1;
-				// pthread_mutex_unlock(&(data->param_mutex));
 				join_all_threads(data, data->n);
-				//destroy_all_mutex(data, forks);
+				/*destroy_all_mutex(data, forks);*/
 				return (1);
-				//return(exit_phylo(data, 0));
+				/*return(exit_phylo(data, 0));*/
 			}
 			i++;
 		}
-		// usleep(25);
 	}
 	return (0);
 }

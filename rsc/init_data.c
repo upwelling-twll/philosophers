@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 void	init_data(t_phlst **plist, t_param *data, t_fork **forks)
 {

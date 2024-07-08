@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phylosopher.h"
+#include "philosopher.h"
 
 int	main(int argc, char *argv[])
 {
 	t_param	*data;
-	t_fork	*forks[200];
 
 	data = parsing(argc, argv);
 	if (data == NULL)
 		return (exit_phylo(data, 2));
-		printf("time_to_eat=%li\n", data->time_to_eat);
-		printf("time_to_sleep=%li\n", data->time_to_sleep);
+	printf("time_to_eat=%li\n", data->time_to_eat);
+	printf("time_to_sleep=%li\n", data->time_to_sleep);
 	gettimeofday(&(data->prog_start), NULL);
-		printf("%li\n", (data->prog_start.tv_sec * 1000000 + data->prog_start.tv_usec));
-	create_threads(data, forks);
+	create_threads(data);
 	exit_phylo(data, 1);
-		printf("the end ~para-pa-para pa!\n");
+	printf("the end ~para-pa-para pa!\n");
 	return (0);
 }

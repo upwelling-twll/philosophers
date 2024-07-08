@@ -10,22 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 long	print_time(t_param *data)
 {
 	struct timeval	time_now;
 
 	gettimeofday(&time_now, NULL);
-
-	// printf("%li.%li ", ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
-	// 		- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000)),
-	// 		((time_now.tv_sec * 1000 * 1000 + time_now.tv_usec)
-	// 		- (data->prog_start.tv_sec * 1000 * 1000 + data->prog_start.tv_usec)) % 1000); 
-
-	// correct outpuc according to sbj
-	return(((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
-			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000))); 
+	return (((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
+			- (data->prog_start.tv_sec * 1000
+				+ data->prog_start.tv_usec / 1000))); 
 }
 
 void	*print_action(int n, int action, t_param *data)
@@ -46,22 +40,11 @@ void	*print_action(int n, int action, t_param *data)
 	if (action == 7)
 		message = "is thinking\n";
 	timestamp = print_time(data);
-
-	// for debug
-	struct timeval  time_now;
-	long time1, time2;
-
-	gettimeofday(&time_now, NULL);
-
-	time1 = ((time_now.tv_sec * 1000 + time_now.tv_usec / 1000)
-			- (data->prog_start.tv_sec * 1000 + data->prog_start.tv_usec / 1000));
-	time2 = ((time_now.tv_sec * 1000 * 1000 + time_now.tv_usec)
-			- (data->prog_start.tv_sec * 1000 * 1000 + data->prog_start.tv_usec)) % 1000;
-	// if (someone_is_dead(n, data, data->param_mutex))
-	// 	return (NULL);
 	pthread_mutex_lock(&data->mutex_printf);
-	printf("%li.%li %i %s ", time1, time2, n, message); 
-	// printf("%li %i %s", timestamp, n, message);
+	printf("%li %i %s", timestamp, n, message);
 	pthread_mutex_unlock(&data->mutex_printf);
 	return (NULL);
 }
+
+/* if (someone_is_dead(data, data->param_mutex))
+	return (NULL); */

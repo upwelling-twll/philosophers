@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../phylosopher.h"
+#include "../philosopher.h"
 
 void	*thread_start(void *one_philo)
 {
@@ -34,23 +34,21 @@ void	*thread_start(void *one_philo)
 	while (l < turns)
 	{
 		if (philo_routine(ph, *(ph->param), (*(ph->param))->param_mutex))
-		{
-			// pthread_mutex_lock(&(*(ph->param))->mutex_printf);
-			// printf("Nph=%i philo_routine returned 1\n", ph->index);
-			// pthread_mutex_unlock(&(*(ph->param))->mutex_printf);
 			return (NULL);
-		}
 		l = l + k;
 	}
 	return (one_philo);
 }
 
-int	create_threads(t_param *data, t_fork **forks)
+int	create_threads(t_param *data)
 {
 	int				i;
-	t_phlst			*philo[200];
+	t_phlst			**philo;
+	t_fork			**forks;
 
 	i = 0;
+	forks = (t_fork **)malloc(sizeof(t_fork *)*(data->n));
+	philo = (t_phlst **)malloc(sizeof(t_phlst *)*(data->n));
 	init_data(philo, data, forks);
 	while (i < data->n)
 	{
