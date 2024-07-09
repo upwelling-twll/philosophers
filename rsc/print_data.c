@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/09 15:57:51 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 17:55:52 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	*print_action(int n, int action, t_param *data)
 		message = "died\n";
 	if (action == 7)
 		message = "is thinking\n";
-	timestamp = print_time(data);
 	pthread_mutex_lock(&data->mutex_printf);
 	if (someone_is_dead(data, &data->param_mutex) && (action != 6))
 	{
 		pthread_mutex_unlock(&data->mutex_printf);
 		return (NULL);
 	}
+	timestamp = print_time(data);
 	printf("%li %i %s", timestamp, n, message);
 	pthread_mutex_unlock(&data->mutex_printf);
 	return (NULL);

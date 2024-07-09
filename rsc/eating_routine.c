@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/04 17:09:14 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 16:29:18 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	eating_routine(t_phlst *philo, t_param *shared_data)
 	pthread_mutex_unlock(&(philo->philo_mutex));
 	print_action(philo->index, 1, shared_data);
 	my_usleep(shared_data->time_to_eat, shared_data);
-	/* this modifies object fork, not philo 
-	both forks are already locked in taking_forks */
 	philo->left_fork->last_user = philo->index;
 	philo->right_fork->last_user = philo->index;
 	pthread_mutex_unlock(min_fork(philo));
@@ -58,7 +56,6 @@ int	taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t *sd_mutex)
 	while (min_frk_lst_usr(p) == p->index || max_frk_lst_usr(p) == p->index)
 	{
 		usleep(100);
-		/*print_action(p->index, 20, sd);*/
 		if (someone_is_dead(sd, sd_mutex))
 			return (1);
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   monitoring.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 16:30:07 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ int	monitore_while_turns(t_param *data)
 			if (is_dead(data, data->plist[i]))
 			{
 				join_all_threads(data, data->n);
-				/*destroy_all_mutex(data, forks);*/
 				return (1);
-				/*return(exit_phylo(data, 0));*/
 			}
 			i++;
 		}
@@ -67,9 +65,7 @@ int	monitore_endlessly(t_param *data)
 			if (is_dead(data, data->plist[i]))
 			{
 				join_all_threads(data, data->n);
-				/*destroy_all_mutex(data, forks);*/
 				return (1);
-				/*return(exit_phylo(data, 0));*/
 			}
 			i++;
 		}
