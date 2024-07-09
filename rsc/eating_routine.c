@@ -50,7 +50,7 @@ void	set_forks(pthread_mutex_t **f1, pthread_mutex_t **f2, t_phlst *p)
 	}
 }
 
-int	taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex)
+int	taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t *sd_mutex)
 {
 	pthread_mutex_t	*fork1_mutex;
 	pthread_mutex_t	*fork2_mutex;

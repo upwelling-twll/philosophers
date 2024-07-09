@@ -49,14 +49,15 @@ void	clean_plist_and_forks(t_param *data)
 	philos = data->plist;
 	while (i < data->n)
 	{
+		printf("del forks[%i] add: %p\n", i, forks[i]);
 		free(forks[i]);
 		i++;
-		printf("deleting firl\n");
 	}
 	free(forks);
 	i = 0;
 	while (i < data->n)
 	{
+		printf("	del plist[%i] add: %p\n", i, philos[i]);
 		free(philos[i]);
 		i++;
 		printf("deleting philo\n");

@@ -47,14 +47,14 @@ int	is_dead(t_param *data, t_phlst *philo)
 	return (0);
 }
 
-int	someone_is_dead(t_param *shared_data, pthread_mutex_t sd_mutex)
+int	someone_is_dead(t_param *shared_data, pthread_mutex_t *sd_mutex)
 {
-	pthread_mutex_lock(&sd_mutex);
+	pthread_mutex_lock(sd_mutex);
 	if (shared_data->prog_must_die)
 	{
-		pthread_mutex_unlock(&sd_mutex);
+		pthread_mutex_unlock(sd_mutex);
 		return (1);
 	}
-	pthread_mutex_unlock(&sd_mutex);
+	pthread_mutex_unlock(sd_mutex);
 	return (0);
 }

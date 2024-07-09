@@ -25,7 +25,7 @@ int	thinking_routine(t_phlst *p, t_param *sd)
 	return (0);
 }
 
-int	philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t sd_mutex)
+int	philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t *sd_mutex)
 {
 	if (p->turns == 0 && check_odd_even(p))
 		return (1);

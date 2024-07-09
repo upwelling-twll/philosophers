@@ -20,9 +20,10 @@ void	init_forks(t_fork **forks, int n)
 	while (i < n)
 	{
 		forks[i] = (t_fork *)malloc(sizeof(t_fork));
+		printf("forks[%i] add: %p\n", i, forks[i]);
 		forks[i]->fork = i + 1;
 		forks[i]->last_user = 0;
-		pthread_mutex_init(&forks[i]->fork_mutex, NULL);
+		pthread_mutex_init(&(forks[i]->fork_mutex), NULL);
 		i++;
 	}
 }
@@ -40,6 +41,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 		plist[i]->must_die = 0;
 		plist[i]->turns = 0;
 		plist[i]->is_eating = 0;
+		printf("plist[%i] add: %p\n", i, plist[i]);
 		pthread_mutex_init(&plist[i]->philo_mutex, NULL);
 		if (i != n - 1)
 		{
@@ -51,6 +53,7 @@ t_phlst	*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks)
 			plist[i]->left_fork = forks[i];
 			plist[i]->right_fork = forks[0];
 		}
+		printf("later forks [%i] add: %p\n", i, forks[i]);
 		i++;
 	}
 	return (*plist);

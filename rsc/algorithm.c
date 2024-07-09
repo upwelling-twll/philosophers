@@ -33,7 +33,7 @@ void	*thread_start(void *one_philo)
 	}
 	while (l < turns)
 	{
-		if (philo_routine(ph, *(ph->param), (*(ph->param))->param_mutex))
+		if (philo_routine(ph, *(ph->param), &((*ph->param)->param_mutex)))
 			return (NULL);
 		l = l + k;
 	}

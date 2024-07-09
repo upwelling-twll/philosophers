@@ -47,7 +47,7 @@ int	my_usleep(long long time, t_param *data)
 	start = timestamp();
 	sleep_time = 900 * time;
 	usleep(sleep_time);
-	while (!(someone_is_dead(data, data->param_mutex)))
+	while (!(someone_is_dead(data, &(data->param_mutex))))
 	{
 		diff = time_diff(start, timestamp());
 		if (diff >= time)
