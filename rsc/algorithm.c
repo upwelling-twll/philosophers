@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/04 15:32:19 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:50:54 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ int	create_threads(t_param *data)
 	t_fork			**forks;
 
 	i = 0;
-	forks = (t_fork **)malloc(sizeof(t_fork *)*(data->n));
-	philo = (t_phlst **)malloc(sizeof(t_phlst *)*(data->n));
+	forks = (t_fork **)malloc(sizeof(t_fork *) * (data->n));
+	philo = (t_phlst **)malloc(sizeof(t_phlst *) * (data->n));
 	init_data(philo, data, forks);
 	while (i < data->n)
 	{
 		data->plist[i]->param = &data;
 		data->plist[i]->lst_eating_time = data->prog_start;
-		pthread_create(&data->plist[i]->thread, NULL, thread_start, 
+		pthread_create(&data->plist[i]->thread, NULL, thread_start,
 			(void *)(data->plist[i]));
 		i++;
 	}

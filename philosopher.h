@@ -6,18 +6,18 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/09 15:43:57 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:56:24 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHER_H
-#define PHILOSOPHER_H
+# define PHILOSOPHER_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <sys/time.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <pthread.h>
+# include <sys/time.h>
 
 typedef struct s_fork
 {
@@ -60,10 +60,10 @@ typedef struct s_param
 	pthread_mutex_t		mutex_printf;
 }			t_param;
 
-
 void			join_all_threads(t_param *data, int n);
 //routine_philo.c
-int				philo_routine(t_phlst *p, t_param *sd, pthread_mutex_t *sd_mutex);
+int				philo_routine(t_phlst *p, t_param *sd,
+					pthread_mutex_t *sd_mutex);
 
 //usleep.c
 int				my_usleep(long long period, t_param *data);
@@ -75,7 +75,8 @@ int				exit_phylo(t_param *data, int flag);
 
 //define_dead_philo.c
 int				is_dead_signal(t_param *data, t_phlst *philo);
-int				someone_is_dead(t_param *shared_data, pthread_mutex_t *sd_mutex);
+int				someone_is_dead(t_param *shared_data,
+					pthread_mutex_t *sd_mutex);
 int				is_dead(t_param *data, t_phlst *philo);
 
 //manage_forks.c
@@ -96,7 +97,8 @@ int				sleeping_routine(t_phlst *philo, t_param *shared_data);
 //eating_routin.c
 // void	finish_eating_turn(t_phlst *philo);
 int				eating_routine(t_phlst *philo, t_param *shared_data);
-int				taking_forks(t_phlst *p, t_param *sd, pthread_mutex_t *sd_mutex);
+int				taking_forks(t_phlst *p, t_param *sd,
+					pthread_mutex_t *sd_mutex);
 
 //algorithm.c
 void			*print_action(int n, int action, t_param *data);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_matrix.c                                     :+:      :+:    :+:   */
+/*   define_dead_philo.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:47 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:51:15 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	is_dead(t_param *data, t_phlst *philo)
 	}
 	gettimeofday(&cur, NULL);
 	if (philo->turns == 0)
-		time_after_eating = (cur.tv_sec - sd->prog_start.tv_sec) 
+		time_after_eating = (cur.tv_sec - sd->prog_start.tv_sec)
 			* 1000 * 1000 + (cur.tv_usec - sd->prog_start.tv_usec);
 	else
-		time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec) 
+		time_after_eating = (cur.tv_sec - philo->lst_eating_time.tv_sec)
 			* 1000 * 1000 + (cur.tv_usec - philo->lst_eating_time.tv_usec);
 	pthread_mutex_unlock(&philo->philo_mutex);
 	if (time_after_eating > data->time_to_die)
