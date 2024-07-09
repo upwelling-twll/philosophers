@@ -3,13 +3,13 @@ NAME = philosopher
 NAME_BONUS = philosopher_bonus
 
 CC = cc
-FLAGS = -g -fsanitize=thread # -fsanitize=address #-fsanitize=thread #-Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
+FLAGS = #-Wall -Wextra -Werror #-g -fsanitize=thread # -fsanitize=address #-fsanitize=thread #-Wall -Wextra -Werror #-g -fsanitize=address #-fsanitize=thread  #-g -fsanitize=address
 RM = rm -f
 
 SRCS =  ./rsc/init_data.c ./rsc/eating_routine.c ./rsc/print_data.c ./rsc/routine_philo.c \
-		./rsc/sleeping_routine.c ./rsc/define_dead_philo.c \
-		./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
-		./rsc/manage_forks.c ./rsc/usleep.c ./rsc/monitoring.c ./main.c ./dbg/dbg_structures.c
+		./rsc/sleeping_routine.c ./rsc/define_dead_philo.c ./rsc/validate_input.c \
+		./rsc/algorithm.c ./rsc/exit.c ./rsc/parsing.c	./rsc/ft_atoi.c\
+		./rsc/manage_forks.c ./rsc/usleep.c ./rsc/monitoring.c ./main.c ./dbg/dbg_structures.c 
 
 SRCS_BONUS = ./rsc/algorithm.c ./rsc/list_operations.c ./rsc/exit.c ./rsc/parsing.c	\
 		./main.c ./dbg/dbg_structures.c

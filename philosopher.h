@@ -6,7 +6,7 @@
 /*   By: nmagdano <nmagdano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:40:27 by nmagdano          #+#    #+#             */
-/*   Updated: 2024/07/04 13:34:20 by nmagdano         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:43:57 by nmagdano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,14 @@ void			*thread_start(void *one_philo);
 t_param			*parsing(int argc, char **argv);
 
 //init_data.c
+t_phlst			*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks);
 void			init_data(t_phlst **plist, t_param *data, t_fork **forks);
 
-//list_operations.c
-t_phlst			*init_plist_and_forks(t_phlst **plist, int n, t_fork **forks);
+//validate_input.c
+int				validate(char *arg);
+
+//ft_atoi.c
+int				ft_atoi(const char *str);
 
 //dbg.c
 void			print_data_list(t_param *data);
